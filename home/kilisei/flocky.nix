@@ -3,7 +3,7 @@
 
   imports = [
     ./features
-    ./style
+    ./config
   ];
 
   home.packages = with pkgs; [
