@@ -1,0 +1,10 @@
+{ lib, config, ... }:
+{
+  options = {
+    kilisei.<option>.enable = lib.mkEnableOption "";
+  };
+
+  config = lib.mkIf config.kilisei.<option>.enable {
+
+  };
+}

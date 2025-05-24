@@ -1,0 +1,46 @@
+{pkgs, ...}: rec {
+  home.packages = with pkgs.gnomeExtensions; [
+    blur-my-shell
+    space-bar
+    switcher
+    just-perfection
+  ];
+
+  dconf.enable = true;
+  dconf.settings = {
+    "org/gnome/desktop/background" = {
+      picture-uri = "file://${../assets/wallpaper2.jpg}";
+      picture-uri-dark = "file://${../assets/wallpaper2.jpg}";
+      picture-options = "zoom";
+    };
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+    "org/gnome/desktop/peripherals/mouse" = {
+      accel-profile = "flat";
+    };
+
+    "org/gnome/shell".enabled-extensions = map (extension: extension.extensionUuid) home.packages;
+
+    "org/gnome/mutter" = {
+      dynamic-workspaces = false;
+    };
+    "org/gnome/desktop/wm/preferences" = {
+      num-workspaces = 4;
+    };
+    "org/gnome/desktop/wm/keybindings" = {
+      switch-to-workspace-1 = ["<Super>j"];
+      switch-to-workspace-2 = ["<Super>k"];
+      switch-to-workspace-3 = ["<Super>l"];
+      switch-to-workspace-4 = ["<Super>;"];
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      screensaver = ["<Super>Escape"];
+    };
+
+    "org/gnome/shell/extensions/switcher" = {
+      show-switcher = ["<Super>f"];
+    };
+  };
+}
