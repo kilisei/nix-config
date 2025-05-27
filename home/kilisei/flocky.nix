@@ -12,6 +12,8 @@
     uutils-coreutils-noprefix
     vial
 
+    obs-studio
+
     eza
     xh
     du-dust

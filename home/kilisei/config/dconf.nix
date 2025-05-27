@@ -29,10 +29,10 @@
       num-workspaces = 4;
     };
     "org/gnome/desktop/wm/keybindings" = {
-      switch-to-workspace-1 = ["<Super>j"];
-      switch-to-workspace-2 = ["<Super>k"];
-      switch-to-workspace-3 = ["<Super>l"];
-      switch-to-workspace-4 = ["<Super>;"];
+      switch-to-workspace-1 = ["<Super>1"];
+      switch-to-workspace-2 = ["<Super>2"];
+      switch-to-workspace-3 = ["<Super>3"];
+      switch-to-workspace-4 = ["<Super>4"];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
