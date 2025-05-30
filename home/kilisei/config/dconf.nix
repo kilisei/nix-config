@@ -8,8 +8,8 @@
   dconf.enable = true;
   dconf.settings = {
     "org/gnome/desktop/background" = {
-      picture-uri = "file://${../assets/wallpaper2.jpg}";
-      picture-uri-dark = "file://${../assets/wallpaper2.jpg}";
+      picture-uri = "file://${../assets/wallpaper3.jpg}";
+      picture-uri-dark = "file://${../assets/wallpaper3.jpg}";
       picture-options = "zoom";
     };
     "org/gnome/desktop/interface" = {
