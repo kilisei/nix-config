@@ -1,15 +1,22 @@
 {pkgs, ...}: {
   environment.gnome.excludePackages = with pkgs; [
-    epiphany # Web browser
-    evince # PDF viewer
-    geary # Email client
-    gnome-characters # Character map tool
-    gnome-music # Music player
-    gnome-terminal # Terminal emulator
-    gnome-tour # GNOME introduction/tour
-    gnome-contacts # Contact manager
-    gnome-maps # Maps application
-    file-roller # Archive manager
-    gnome-connections # Remote desktop client
+    gnome-terminal
+    gnome-console
+    gnome-tour
+    yelp
+    epiphany
+    geary
+    gnome-contacts
+    gnome-connections
+    gnome-music
+    totem
+    simple-scan
+    evince
+    file-roller
+    gnome-characters
+    gnome-font-viewer
+    gnome-maps
+    gnome-weather
+    gnome-logs
   ];
 }

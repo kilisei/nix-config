@@ -7,16 +7,18 @@
   ];
 
   home.packages = with pkgs; [
+    go
+    tinygo
+    gdb
+    gdbgui
+    openocd
+
     gnome-boxes
     gnome-sound-recorder
     uutils-coreutils-noprefix
     vial
 
     obs-studio
-
-    eza
-    xh
-    du-dust
 
     # Comms
     vesktop
@@ -33,21 +35,6 @@
     kubectl
     kustomize
     nixd
-
-    # Monitoring / shell utils
-    cpu-x
-    btop
-    wrk
-    fastfetch
-    direnv
-    bat
-    btop
-    fastfetch
-    fzf
-    gnumake
-    ripgrep
-    jq
-    wget2
 
     onlyoffice-desktopeditors
 

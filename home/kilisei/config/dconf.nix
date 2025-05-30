@@ -2,7 +2,6 @@
   home.packages = with pkgs.gnomeExtensions; [
     blur-my-shell
     space-bar
-    switcher
     just-perfection
   ];
 
@@ -33,10 +32,6 @@
       switch-to-workspace-2 = ["<Super>2"];
       switch-to-workspace-3 = ["<Super>3"];
       switch-to-workspace-4 = ["<Super>4"];
-    };
-
-    "org/gnome/settings-daemon/plugins/media-keys" = {
-      screensaver = ["<Super>Escape"];
     };
 
     "org/gnome/shell/extensions/switcher" = {

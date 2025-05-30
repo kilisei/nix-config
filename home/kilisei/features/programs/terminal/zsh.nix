@@ -26,6 +26,7 @@
       ripgrep
       jq
       wget2
+      cpu-x
     ];
 
     programs.zsh = {
