@@ -3,7 +3,10 @@
     ../../modules/hosts/common
   ];
 
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "flocky";
+    networkmanager.enable = true;
+  };
 
   boot.loader = {
     efi.canTouchEfiVariables = true;
@@ -16,11 +19,11 @@
   };
 
   services = {
-    xserver = {
-      enable = true;
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
-    };
+    # xserver = {
+    #   enable = true;
+    # };
+    desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = true;
 
     pulseaudio.enable = false;
     pipewire = {

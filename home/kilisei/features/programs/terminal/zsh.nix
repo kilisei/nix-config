@@ -35,6 +35,7 @@
       syntaxHighlighting.enable = true;
       enableCompletion = true;
       shellAliases = {
+        nix-shell = "nix-shell --command zsh";
         wget = "wget2";
         cat = "bat";
         grep = "rg";

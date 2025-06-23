@@ -7,15 +7,24 @@
   ];
 
   home.packages = with pkgs; [
+    prismlauncher
+
+    corepack
+    nodejs
+    sqlite
+
     go
     tinygo
     gdb
     gdbgui
     openocd
 
+    cargo
+    rustc
+    rust-analyzer
+
     gnome-boxes
     gnome-sound-recorder
-    uutils-coreutils-noprefix
     vial
 
     obs-studio
@@ -27,7 +36,8 @@
     # Utils
     usbimager
 
-    # Kubernetes
+    # Kubernetes/Docker
+    docker-compose
     k0sctl
     helm-ls
     kubernetes-helm
@@ -35,11 +45,14 @@
     kubectl
     kustomize
     nixd
+    lens
 
     onlyoffice-desktopeditors
 
     # Backups
     pika-backup
+
+    firefox-devedition
   ];
 
   programs.firefox.enable = true;

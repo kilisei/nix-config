@@ -3,6 +3,10 @@
     blur-my-shell
     space-bar
     just-perfection
+    emoji-copy
+    clipboard-history
+    user-avatar-in-quick-settings
+    gsconnect
   ];
 
   dconf.enable = true;
@@ -32,10 +36,6 @@
       switch-to-workspace-2 = ["<Super>2"];
       switch-to-workspace-3 = ["<Super>3"];
       switch-to-workspace-4 = ["<Super>4"];
-    };
-
-    "org/gnome/shell/extensions/switcher" = {
-      show-switcher = ["<Super>f"];
     };
   };
 }
