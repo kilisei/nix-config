@@ -29,6 +29,7 @@
       enableCompletion = true;
       shellAliases = {
         nix-shell = "nix-shell --command zsh";
+        nix-dev = "nix develop --command zsh";
         wget = "wget2";
         cat = "bat";
         ls = "eza";
@@ -47,7 +48,7 @@
         gu = "git pull";
       };
 
-      initExtra = ''
+      initContent = ''
         nurse() {
           sudo nixos-rebuild switch --flake ".#$1"
         }

@@ -15,22 +15,13 @@
 
     go
     tinygo
-    gdb
-    gdbgui
-    openocd
 
-    cargo
-    rustc
-    rust-analyzer
-
-    gnome-sound-recorder
     vial
-
-    obs-studio
 
     # Comms
     vesktop
     teams-for-linux
+    obs-studio
 
     # Utils
     usbimager
@@ -43,7 +34,6 @@
     helmfile
     kubectl
     kustomize
-    nixd
     lens
 
     onlyoffice-desktopeditors

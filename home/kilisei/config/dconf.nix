@@ -11,10 +11,9 @@
   dconf.enable = true;
   dconf.settings = {
     "org/gnome/shell".enabled-extensions = map (extension: extension.extensionUuid) home.packages;
-
     "org/gnome/desktop/background" = {
       picture-uri = "file://${../assets/wallpaper3.jpg}";
-      picture-uri-dark = "file://${../assets/wallpaper3.jpg}";
+      picture-uri-dark = "file://${../assets/wallpaper4.jpg}";
       picture-options = "zoom";
     };
     "org/gnome/desktop/interface" = {

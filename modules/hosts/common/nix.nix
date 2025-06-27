@@ -16,12 +16,14 @@
     channel.enable = false;
     registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
   };
+
+  programs.nh = {
+     enable = true;
+     clean.enable = true;
+     clean.extraArgs = "--keep-since 7d --keep 7";
+     flake = "/home/kilisei/nixos-config";
+   };
 
   environment.systemPackages = with pkgs; [
     alejandra

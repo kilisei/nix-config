@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }: {
   options = {
@@ -9,8 +8,6 @@
   };
 
   config = lib.mkIf config.kilisei.editor.vscode.enable {
-    home.packages = with pkgs; [
-      vscode
-    ];
+    programs.vscode.enable = true;
   };
 }
