@@ -5,12 +5,13 @@
     just-perfection
     emoji-copy
     clipboard-history
-    user-avatar-in-quick-settings
     gsconnect
   ];
 
   dconf.enable = true;
   dconf.settings = {
+    "org/gnome/shell".enabled-extensions = map (extension: extension.extensionUuid) home.packages;
+
     "org/gnome/desktop/background" = {
       picture-uri = "file://${../assets/wallpaper3.jpg}";
       picture-uri-dark = "file://${../assets/wallpaper3.jpg}";
@@ -22,9 +23,6 @@
     "org/gnome/desktop/peripherals/mouse" = {
       accel-profile = "flat";
     };
-
-    "org/gnome/shell".enabled-extensions = map (extension: extension.extensionUuid) home.packages;
-
     "org/gnome/mutter" = {
       dynamic-workspaces = false;
     };

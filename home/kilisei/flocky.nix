@@ -23,7 +23,6 @@
     rustc
     rust-analyzer
 
-    gnome-boxes
     gnome-sound-recorder
     vial
 
@@ -51,8 +50,6 @@
 
     # Backups
     pika-backup
-
-    firefox-devedition
   ];
 
   programs.firefox.enable = true;

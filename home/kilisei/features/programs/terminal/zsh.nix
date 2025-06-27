@@ -1,11 +1,6 @@
-{
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{ lib, config, pkgs, ... }: {
   options = {
-    kilisei.terminal.zsh.enable = lib.mkEnableOption "";
+    kilisei.terminal.zsh.enable = lib.mkEnableOption "Enable custom Zsh setup with useful CLI tools and aliases";
   };
 
   config = lib.mkIf config.kilisei.terminal.zsh.enable {
@@ -19,8 +14,6 @@
       fastfetch
       direnv
       bat
-      btop
-      fastfetch
       fzf
       gnumake
       ripgrep
@@ -38,14 +31,13 @@
         nix-shell = "nix-shell --command zsh";
         wget = "wget2";
         cat = "bat";
-        grep = "rg";
         ls = "eza";
         ga = "git add";
         gb = "git --patch";
         gba = "gb --all";
         gc = "git commit";
         gco = "git checkout";
-        gl = "git log --graph --all --pretty=format:'%C(magenta)%h %C(white) %an  %ar%C(blue)  %D%n%s%n'";
+        gl = "git log --graph --all --pretty=format:'%C(magenta)%h %C(white)%an  %ar%C(blue)  %D%n%s%n'";
         gd = "git diff --output-indicator-new=' ' --output-indicator-old=' '";
         gds = "gd --staged";
         gi = "git init";
@@ -54,6 +46,16 @@
         gs = "git status --short";
         gu = "git pull";
       };
+
+      initExtra = ''
+        nurse() {
+          sudo nixos-rebuild switch --flake ".#$1"
+        }
+        horse() {
+          home-manager switch --flake ".#$1"
+        }
+      '';
+
       oh-my-zsh = {
         enable = true;
         theme = "robbyrussell";
@@ -62,9 +64,7 @@
     programs.zoxide = {
       enable = true;
       enableZshIntegration = true;
-      options = [
-        "--cmd cd"
-      ];
+      options = [ "--cmd cd" ];
     };
   };
 }
