@@ -18,13 +18,6 @@
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 
-  programs.nh = {
-     enable = true;
-     clean.enable = true;
-     clean.extraArgs = "--keep-since 7d --keep 7";
-     flake = "/home/kilisei/nixos-config";
-   };
-
   environment.systemPackages = with pkgs; [
     alejandra
     nixd

@@ -1,6 +1,10 @@
 {
   imports = [
-    ../../modules/hosts/common
+    ./yubikey.nix
+    ./i18n.nix
+    ./nix.nix
+    ./sops.nix
+    ./debloat.nix
   ];
 
   networking = {

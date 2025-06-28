@@ -1,18 +1,22 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ../common
-    ../../modules/hosts/common/yubikey.nix
   ];
-
-  kilisei.yubikey.enable = true;
 
   system.stateVersion = "24.11";
 
   networking.firewall = rec {
     allowedTCPPortRanges = [
       # gsconnect/kdeconnect
-      { from = 1714; to = 1764; }
+      {
+        from = 1714;
+        to = 1764;
+      }
     ];
     allowedUDPPortRanges = allowedTCPPortRanges;
   };
@@ -22,21 +26,20 @@
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
   '';
 
-  virtualisation.docker.enable = true;
-  virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
-  };
+  sops.secrets."passwords/kilisei".neededForUsers = true;
+  users.mutableUsers = false;
 
   users.users.kilisei = {
     isNormalUser = true;
+    hashedPasswordFile = config.sops.secrets."passwords/kilisei".path;
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
     extraGroups = [
       "wheel"
-      "networkmanager"
-      "docker"
+      # "networkmanager"
     ];
-    initialPassword = "kilisei";
+    packages = with pkgs; [
+      home-manager
+    ];
   };
 }

@@ -1,0 +1,12 @@
+keys:
+  - &user
+    - &kilisei age1algx6ud58yfafjrz4unfled7nftkatkt7wy2g5eky5m3s7mv4eaqsuxlt8
+  - &host
+    - &flocky age15tztdh66yv7cz0p3v3592ajapmlr9q6kh9shgpzwchscf5kjc5ts0v0c0r
+
+creation_rules:
+  - path_regex: secrets.yaml$
+    key_groups:
+      - age:
+          - *kilisei
+          - *flocky

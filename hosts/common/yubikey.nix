@@ -1,17 +1,12 @@
 {
-  config,
-  lib,
   pkgs,
   ...
 }: {
-  options = {
-    kilisei.yubikey.enable = lib.mkEnableOption "";
-  };
-
-  config = lib.mkIf config.kilisei.yubikey.enable {
     environment.systemPackages = with pkgs; [
       yubikey-manager
       yubioath-flutter
+      pam_u2f
+      yubikey-touch-detector
     ];
 
     services = {
@@ -39,5 +34,4 @@
       };
       sshAgentAuth.enable = true;
     };
-  };
 }
