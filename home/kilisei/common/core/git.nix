@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   home.packages = with pkgs; [
     difftastic
     diff-so-fancy
@@ -12,7 +13,6 @@
   programs.gpg = {
     enable = true;
   };
-
 
   programs.git = {
     enable = true;

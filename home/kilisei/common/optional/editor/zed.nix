@@ -18,20 +18,30 @@
     userSettings = {
       theme = "GitHub Dark Default";
       icon_theme = "Catppuccin Mocha";
+
       soft_wrap = "editor_width";
+
       base_keymap = "JetBrains";
       vim_mode = true;
+
       ui_font_family = "JetBrainsMono NF";
       ui_font_size = 16;
       buffer_font_family = "JetBrainsMono NF";
       buffer_font_size = 16;
+
       autosave = "on_focus_change";
+
       languages = {
         "TypeScript" = {
           "formatter" = {
             "external" = {
               "command" = "pnpm";
-              "arguments" = ["exec" "eslint" "--stdin-filepath" "{buffer_path}"];
+              "arguments" = [
+                "exec"
+                "eslint"
+                "--stdin-filepath"
+                "{buffer_path}"
+              ];
             };
           };
           "code_actions_on_format" = {
@@ -43,7 +53,12 @@
           "formatter" = {
             "external" = {
               "command" = "pnpm";
-              "arguments" = ["exec" "eslint" "--stdin-filepath" "{buffer_path}"];
+              "arguments" = [
+                "exec"
+                "eslint"
+                "--stdin-filepath"
+                "{buffer_path}"
+              ];
             };
           };
           "code_actions_on_format" = {

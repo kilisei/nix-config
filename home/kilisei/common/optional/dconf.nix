@@ -1,4 +1,5 @@
-{pkgs, ...}: rec {
+{ pkgs, ... }:
+rec {
   home.packages = with pkgs.gnomeExtensions; [
     blur-my-shell
     space-bar
@@ -17,6 +18,7 @@
       picture-options = "zoom";
     };
     "org/gnome/desktop/interface" = {
+      accent-color = "slate";
       color-scheme = "prefer-dark";
     };
     "org/gnome/desktop/peripherals/mouse" = {
@@ -26,13 +28,15 @@
       dynamic-workspaces = false;
     };
     "org/gnome/desktop/wm/preferences" = {
+      action-middle-click-titlebar = "minimize";
+      button-layout = "appmenu:minimize,maximize,close";
       num-workspaces = 4;
     };
     "org/gnome/desktop/wm/keybindings" = {
-      switch-to-workspace-1 = ["<Super>1"];
-      switch-to-workspace-2 = ["<Super>2"];
-      switch-to-workspace-3 = ["<Super>3"];
-      switch-to-workspace-4 = ["<Super>4"];
+      switch-to-workspace-1 = [ "<Super>1" ];
+      switch-to-workspace-2 = [ "<Super>2" ];
+      switch-to-workspace-3 = [ "<Super>3" ];
+      switch-to-workspace-4 = [ "<Super>4" ];
     };
   };
 }

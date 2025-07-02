@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   gtk = {
     enable = true;
     theme = {
@@ -9,4 +10,7 @@
       package = pkgs.tela-circle-icon-theme;
     };
   };
+  home.packages = with pkgs; [
+    gnome-tweaks
+  ];
 }

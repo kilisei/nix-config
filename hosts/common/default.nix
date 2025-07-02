@@ -2,7 +2,7 @@
   imports = [
     ./yubikey.nix
     ./i18n.nix
-    ./nix.nix
+    ./nixpkgs.nix
     ./sops.nix
     ./debloat.nix
   ];
@@ -18,13 +18,14 @@
       enable = true;
       device = "nodev";
       efiSupport = true;
-      # useOSProber = true;
+      useOSProber = true;
     };
   };
 
   services = {
     desktopManager.gnome.enable = true;
     displayManager.gdm.enable = true;
+    xserver.videoDrivers = [ "amdgpu" ];
 
     pulseaudio.enable = false;
     pipewire = {

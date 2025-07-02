@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   home.packages = with pkgs; [
     uutils-coreutils-noprefix
     eza
@@ -56,7 +57,10 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = ["git" "sudo"];
+      plugins = [
+        "git"
+        "sudo"
+      ];
       theme = "robbyrussell";
     };
   };
