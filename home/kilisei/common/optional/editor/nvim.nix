@@ -7,5 +7,8 @@
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
+    plugins = {
+      lualine.enable = true;
+    };
   };
 }

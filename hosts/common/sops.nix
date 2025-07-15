@@ -19,6 +19,10 @@
       "passwords/kilisei" = {
         owner = config.users.users.kilisei.name;
       };
+      "passwords/restic" = {
+        owner = config.users.users.kilisei.name;
+        mode = "0400";
+      };
     };
   };
 }

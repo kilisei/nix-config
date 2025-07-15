@@ -10,6 +10,7 @@
     ./udev.nix
     ./networking.nix
     ./steam.nix
+    ./backup.nix
   ];
 
   sops.secrets."passwords/kilisei".neededForUsers = true;

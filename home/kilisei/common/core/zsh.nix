@@ -16,6 +16,8 @@
     jq
     wget2
     cpu-x
+    dig
+    tree
   ];
 
   programs.zsh = {
@@ -44,16 +46,10 @@
       gs = "git status --short";
       gu = "git pull";
       vim = "nvim";
+      vi = "nvim";
+      v = "nvim";
+      k = "kubectl";
     };
-
-    initContent = ''
-      nurse() {
-        sudo nixos-rebuild switch --flake ".#$1"
-      }
-      horse() {
-        home-manager switch --flake ".#$1"
-      }
-    '';
 
     oh-my-zsh = {
       enable = true;
