@@ -15,6 +15,12 @@
 
   sops.secrets."passwords/kilisei".neededForUsers = true;
 
+  services.resticBackups = {
+    enable = true;
+    user = "kilisei";
+    passwordFile = config.sops.secrets."passwords/restic".path;
+  };
+
   users = {
     mutableUsers = false;
     users.kilisei = {

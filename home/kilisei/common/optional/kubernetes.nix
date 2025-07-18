@@ -8,6 +8,6 @@
     helmfile
     kubectl
     kustomize
-    lens
+    aptakube
   ];
 }

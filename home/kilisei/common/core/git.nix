@@ -17,8 +17,8 @@
   programs.git = {
     enable = true;
     package = pkgs.gitAndTools.gitFull;
-    userName = "Kilisei";
-    userEmail = "seitzkili+git@gmail.com";
+    userName = "kilisei";
+    userEmail = "git@kilisei.dev";
 
     extraConfig = {
       user.signingKey = "66F94DE6D11A90F3";

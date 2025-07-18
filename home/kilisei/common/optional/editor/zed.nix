@@ -14,6 +14,9 @@
       "dockerfile"
       "docker-compose"
       "oxlint"
+      "go-snippets"
+      "vue-snippets"
+      "sqlc-snippets"
     ];
     userSettings = {
       theme = "GitHub Dark Default";
@@ -68,5 +71,26 @@
         };
       };
     };
+    userKeymaps = [
+      {
+        context = "Workspace";
+        bindings = {
+          alt-p = [
+            "task::Spawn"
+            {
+              task_name = "FF";
+              reveal_target = "center";
+            }
+          ];
+          alt-f = [
+            "task::Spawn"
+            {
+              task_name = "FT";
+              reveal_target = "center";
+            }
+          ];
+        };
+      }
+    ];
   };
 }

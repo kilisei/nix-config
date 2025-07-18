@@ -4,13 +4,9 @@
     ./i18n.nix
     ./nixpkgs.nix
     ./sops.nix
-    ./debloat.nix
+    ./gnome.nix
+    ./backup.nix
   ];
-
-  networking = {
-    hostName = "flocky";
-    networkmanager.enable = true;
-  };
 
   boot.loader = {
     efi.canTouchEfiVariables = true;
