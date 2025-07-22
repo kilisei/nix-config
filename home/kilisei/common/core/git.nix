@@ -21,7 +21,7 @@
     userEmail = "git@kilisei.dev";
 
     extraConfig = {
-      user.signingKey = "66F94DE6D11A90F3";
+      user.signingKey = "E5C78D48E7E2DD1D";
 
       init.defaultBranch = "main";
 

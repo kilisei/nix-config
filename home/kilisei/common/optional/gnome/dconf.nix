@@ -8,13 +8,14 @@ rec {
     gsconnect
     freon
     dash-to-panel
+    user-themes
   ];
 
   dconf.enable = true;
   dconf.settings = {
     "org/gnome/shell".enabled-extensions = map (extension: extension.extensionUuid) home.packages;
     "org/gnome/desktop/background" = {
-      picture-uri = "file://${../../../assets/wallpaper3.jpg}";
+      picture-uri = "file://${../../../assets/wallpaper4.jpg}";
       picture-uri-dark = "file://${../../../assets/green.jpg}";
       picture-options = "zoom";
     };

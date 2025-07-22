@@ -18,6 +18,7 @@
     cpu-x
     dig
     tree
+    television
   ];
 
   programs.zsh = {

@@ -28,7 +28,7 @@ in
     repositoryBasePath = mkOption {
       type = types.path;
       description = "Base directory where backup repositories are stored.";
-      default = "/run/media/restic/WD_BLACK/backup/restic";
+      default = "/home/${cfg.user}/backups/";
     };
   };
 
@@ -65,7 +65,6 @@ in
       };
       paths = [
         "/home/${cfg.user}"
-        "/var/lib"
       ];
       pruneOpts = [
         "--keep-hourly 24"

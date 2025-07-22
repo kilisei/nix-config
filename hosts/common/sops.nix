@@ -16,10 +16,10 @@
       generateKey = true;
     };
     secrets = {
-      "passwords/kilisei" = {
+      "user/kilisei/password/login" = {
         owner = config.users.users.kilisei.name;
       };
-      "passwords/restic" = {
+      "user/kilisei/password/restic" = {
         owner = config.users.users.kilisei.name;
         mode = "0400";
       };
