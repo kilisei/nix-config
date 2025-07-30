@@ -7,7 +7,6 @@ rec {
     clipboard-history
     gsconnect
     freon
-    dash-to-panel
     user-themes
   ];
 

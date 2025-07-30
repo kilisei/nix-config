@@ -21,6 +21,15 @@
       "x-systemd.idle-timeout=10min"
     ];
   };
+  fileSystems."/run/media/kilisei/WD_BLACK" = {
+    device = "/dev/disk/by-uuid/54A9-64A8";
+    fsType = "exfat";
+    options = [
+      "nofail"
+      "x-systemd.automount"
+      "x-systemd.idle-timeout=10min"
+    ];
+  };
 
   services.resticBackups = {
     enable = true;
