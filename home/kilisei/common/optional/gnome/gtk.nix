@@ -13,5 +13,7 @@
   };
   home.packages = with pkgs; [
     gnome-tweaks
+    recordbox
+    gnome-music
   ];
 }

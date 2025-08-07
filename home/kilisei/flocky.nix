@@ -16,6 +16,7 @@
     common/optional/backups.nix
     common/optional/nix-helper.nix
     common/optional/games.nix
+    ./spotdl.nix
   ];
 
   home = rec {

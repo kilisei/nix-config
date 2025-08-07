@@ -14,7 +14,6 @@
     gnumake
     ripgrep
     jq
-    wget2
     cpu-x
     dig
     tree
@@ -30,7 +29,6 @@
     shellAliases = {
       nix-shell = "nix-shell --command zsh";
       nix-dev = "nix develop --command zsh";
-      wget = "wget2";
       cat = "bat";
       ls = "eza";
       ga = "git add";

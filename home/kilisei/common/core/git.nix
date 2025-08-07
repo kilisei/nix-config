@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     difftastic
     diff-so-fancy
+    git-lfs
   ];
 
   services.gpg-agent = {

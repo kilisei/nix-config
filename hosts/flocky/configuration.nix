@@ -11,6 +11,9 @@
     ./networking.nix
     ./steam.nix
   ];
+  nixpkgs.config.permittedInsecurePackages = [
+    "libsoup-2.74.3"
+  ];
 
   fileSystems."/run/media/restic/WD_BLACK" = {
     device = "/dev/disk/by-uuid/54A9-64A8";
