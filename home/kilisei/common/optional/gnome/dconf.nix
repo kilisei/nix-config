@@ -1,13 +1,15 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 rec {
   home.packages = with pkgs.gnomeExtensions; [
     blur-my-shell
     space-bar
-    just-perfection
     clipboard-history
     gsconnect
-    freon
     user-themes
+    astra-monitor
   ];
 
   dconf.enable = true;

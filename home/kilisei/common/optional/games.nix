@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     modrinth-app
+    prismlauncher
   ];
   nixpkgs.overlays = [
     (final: prev: {

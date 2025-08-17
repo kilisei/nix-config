@@ -26,11 +26,15 @@
 
       base_keymap = "JetBrains";
       vim_mode = true;
-
-      ui_font_family = "JetBrainsMono NF";
+      ui_font_family = "JetBrainsMonoNL Nerd Font Regular";
       ui_font_size = 16;
-      buffer_font_family = "JetBrainsMono NF";
+      buffer_font_family = "JetBrainsMono Nerd Font Regular";
       buffer_font_size = 16;
+      terminal_font_family = "JetBrainsMono Nerd Font Regular";
+      terminal_font_size = 16;
+      buffer_font_features = {
+        calt = false;
+      };
 
       autosave = "on_focus_change";
 

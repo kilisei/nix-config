@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     uutils-coreutils-noprefix
-    eza
     xh
     du-dust
     btop
@@ -10,7 +9,6 @@
     fastfetch
     direnv
     bat
-    fzf
     gnumake
     ripgrep
     jq
@@ -19,12 +17,33 @@
     tree
     television
   ];
+  programs.lazygit = {
+    enable = true;
+  };
+
+  programs.lazydocker = {
+    enable = true;
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.eza = {
+    enable = true;
+    enableZshIntegration = true;
+    git = true;
+    extraOptions = [
+      "--icons"
+      "--group-directories-first"
+    ];
+  };
 
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    enableCompletion = true;
 
     shellAliases = {
       nix-shell = "nix-shell --command zsh";
@@ -49,6 +68,10 @@
       v = "nvim";
       k = "kubectl";
     };
+
+    initContent = ''
+      bindkey -v
+    '';
 
     oh-my-zsh = {
       enable = true;

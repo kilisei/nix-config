@@ -26,7 +26,7 @@
         # Main desktop
         "kilisei@flocky" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
-          extraSpecialArgs = { inherit inputs outputs; };
+          extraSpecialArgs = { inherit inputs outputs system; };
           modules = [
             ./home/kilisei/flocky.nix
           ];

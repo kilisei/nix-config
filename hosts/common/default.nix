@@ -5,8 +5,19 @@
     ./nixpkgs.nix
     ./sops.nix
     ./gnome.nix
-    ./backup.nix
   ];
+
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
+    settings = {
+      auto-optimise-store = true;
+    };
+    optimise.automatic = true;
+  };
 
   boot.loader = {
     efi.canTouchEfiVariables = true;
