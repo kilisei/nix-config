@@ -4,6 +4,7 @@
     difftastic
     diff-so-fancy
     git-lfs
+    git-absorb
   ];
 
   services.gpg-agent = {

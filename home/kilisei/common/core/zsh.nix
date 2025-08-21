@@ -16,6 +16,7 @@
     dig
     tree
     television
+    imagemagick
   ];
   programs.lazygit = {
     enable = true;

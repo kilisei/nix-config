@@ -4,7 +4,6 @@
     enable = true;
     theme = {
       name = "Adwaita-dark";
-
     };
     iconTheme = {
       name = "Tela-circle-dark";
@@ -13,6 +12,5 @@
   };
   home.packages = with pkgs; [
     gnome-tweaks
-    gnome-music
   ];
 }

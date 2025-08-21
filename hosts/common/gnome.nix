@@ -10,7 +10,6 @@
     gnome-contacts
     gnome-connections
     gnome-music
-    totem
     simple-scan
     evince
     file-roller

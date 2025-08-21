@@ -7,13 +7,12 @@
   imports = [
     ./hardware-configuration.nix
     ../common
+    ./insecure.nix
     ./udev.nix
     ./networking.nix
     ./steam.nix
   ];
-  nixpkgs.config.permittedInsecurePackages = [
-    "libsoup-2.74.3"
-  ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   virtualisation.docker = {
     enable = true;
