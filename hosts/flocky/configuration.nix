@@ -14,6 +14,7 @@
   ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  programs.nix-ld.enable = true;
   virtualisation.docker = {
     enable = true;
     rootless = {

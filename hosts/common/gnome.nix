@@ -13,7 +13,6 @@
     simple-scan
     evince
     file-roller
-    gnome-characters
     gnome-font-viewer
     gnome-maps
     gnome-weather

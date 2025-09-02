@@ -36,43 +36,45 @@
         calt = false;
       };
 
+      relative_line_numbers = true;
+
       autosave = "on_focus_change";
 
       languages = {
-        "TypeScript" = {
-          "formatter" = {
-            "external" = {
-              "command" = "pnpm";
-              "arguments" = [
-                "exec"
-                "eslint"
-                "--stdin-filepath"
-                "{buffer_path}"
-              ];
-            };
-          };
-          "code_actions_on_format" = {
-            "source.fixAll.eslint" = true;
-          };
-          "format_on_save" = "on";
-        };
-        "Vue.js" = {
-          "formatter" = {
-            "external" = {
-              "command" = "pnpm";
-              "arguments" = [
-                "exec"
-                "eslint"
-                "--stdin-filepath"
-                "{buffer_path}"
-              ];
-            };
-          };
-          "code_actions_on_format" = {
-            "source.fixAll.eslint" = true;
-          };
-          "format_on_save" = "on";
-        };
+        # "TypeScript" = {
+        #   "formatter" = {
+        #     "external" = {
+        #       "command" = "pnpm";
+        #       "arguments" = [
+        #         "exec"
+        #         "eslint"
+        #         "--stdin-filepath"
+        #         "{buffer_path}"
+        #       ];
+        #     };
+        #   };
+        #   "code_actions_on_format" = {
+        #     "source.fixAll.eslint" = true;
+        #   };
+        #   "format_on_save" = "on";
+        # };
+        # "Vue.js" = {
+        #   "formatter" = {
+        #     "external" = {
+        #       "command" = "pnpm";
+        #       "arguments" = [
+        #         "exec"
+        #         "eslint"
+        #         "--stdin-filepath"
+        #         "{buffer_path}"
+        #       ];
+        #     };
+        #   };
+        #   "code_actions_on_format" = {
+        #     "source.fixAll.eslint" = true;
+        #   };
+        #   "format_on_save" = "on";
+        # };
       };
     };
     userKeymaps = [

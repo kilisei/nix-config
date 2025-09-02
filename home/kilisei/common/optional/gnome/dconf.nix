@@ -10,10 +10,14 @@ rec {
     space-bar
     clipboard-history
     gsconnect
-    switcher
     user-themes
     just-perfection
     astra-monitor
+    unmess
+    zen
+    panel-corners
+    fuzzy-app-search
+    awesome-tiles
   ];
 
   dconf.enable = true;
@@ -43,7 +47,7 @@ rec {
     };
     "org/gnome/desktop/peripherals/mouse" = {
       accel-profile = "flat";
-      natural-scroll = true;
+      natural-scroll = false;
     };
     "org/gnome/mutter" = {
       dynamic-workspaces = false;
