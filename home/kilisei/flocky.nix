@@ -1,8 +1,12 @@
 {
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "libsoup-2.74.3"
+  ];
+
+  systemd.user.startServices = "sd-switch";
 
   imports = [
-    ../common/core
     common/core
 
     common/optional/browser
@@ -19,9 +23,7 @@
     common/optional/games.nix
     common/optional/3d.nix
   ];
-  nixpkgs.config.permittedInsecurePackages = [
-    "libsoup-2.74.3"
-  ];
+
   home = rec {
     stateVersion = "24.11";
     username = "kilisei";

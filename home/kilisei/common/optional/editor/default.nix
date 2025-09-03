@@ -4,5 +4,6 @@
     ./zed.nix
     ./vscode.nix
     ./affine.nix
+    ./obsidian.nix
   ];
 }

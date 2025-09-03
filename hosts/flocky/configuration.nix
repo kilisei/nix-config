@@ -7,21 +7,11 @@
   imports = [
     ./hardware-configuration.nix
     ../common
-    ./insecure.nix
     ./udev.nix
     ./networking.nix
     ./steam.nix
+    ./boot.nix
   ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  programs.nix-ld.enable = true;
-  virtualisation.docker = {
-    enable = true;
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
-  };
 
   sops.secrets."user/kilisei/password/login".neededForUsers = true;
   users = {
@@ -34,10 +24,10 @@
       extraGroups = [
         "wheel"
         "networkmanager"
-        "docker"
       ];
       packages = with pkgs; [
         home-manager
+        sops
       ];
     };
   };

@@ -4,6 +4,7 @@
     yubikey-manager
     yubioath-flutter
     pam_u2f
+    opensc
   ];
 
   programs.yubikey-touch-detector = {
@@ -22,8 +23,6 @@
     udev.packages = [ pkgs.yubikey-personalization ];
   };
 
-  # run `pamu2fcfg > ~/.config/Yubico/u2f_keys`
-  # if sudo or login is broken should fix login issues
   security.pam = {
     u2f = {
       enable = true;

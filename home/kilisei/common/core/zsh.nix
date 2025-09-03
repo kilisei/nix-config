@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     uutils-coreutils-noprefix
-    xh
     du-dust
     btop
     wrk
