@@ -9,7 +9,7 @@
 
   home.packages = with pkgs; [
     vial
-    gnome-sound-recorder
+    sl
   ];
 
   programs.home-manager.enable = true;

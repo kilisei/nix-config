@@ -38,7 +38,7 @@
         date = "relative";
       };
 
-      commit.gpgsign = true;
+      # commit.gpgsign = true;
 
       push = {
         autoSetupRemote = true;
