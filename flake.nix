@@ -14,11 +14,16 @@
     in
     {
       nixosConfigurations = {
-        # Main desktop
         flocky = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/nixos/flocky/configuration.nix
+          ];
+        };
+        water = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./hosts/nixos/water/configuration.nix
           ];
         };
       };
@@ -30,6 +35,13 @@
           extraSpecialArgs = { inherit inputs outputs system; };
           modules = [
             ./home/kilisei/flocky.nix
+          ];
+        };
+        "kilisei@water" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.${system};
+          extraSpecialArgs = { inherit inputs outputs system; };
+          modules = [
+            ./home/kilisei/water.nix
           ];
         };
       };
