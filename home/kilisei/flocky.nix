@@ -1,10 +1,7 @@
 {
-  nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
     "libsoup-2.74.3"
   ];
-
-  systemd.user.startServices = "sd-switch";
 
   imports = [
     common/core
@@ -16,12 +13,12 @@
     common/optional/kubernetes.nix
     common/optional/media.nix
     common/optional/office.nix
-    common/optional/fonts.nix
     common/optional/comms.nix
     common/optional/backups.nix
-    common/optional/nix-helper.nix
     common/optional/games.nix
     common/optional/3d.nix
+    common/optional/vial.nix
+    common/optional/ghostty.nix
   ];
 
   home = rec {

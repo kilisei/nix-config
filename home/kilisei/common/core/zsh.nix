@@ -1,45 +1,4 @@
-{ pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    uutils-coreutils-noprefix
-    du-dust
-    btop
-    wrk
-    fastfetch
-    direnv
-    bat
-    gnumake
-    ripgrep
-    jq
-    cpu-x
-    dig
-    tree
-    television
-    imagemagick
-  ];
-  programs.lazygit = {
-    enable = true;
-  };
-
-  programs.lazydocker = {
-    enable = true;
-  };
-
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
-  programs.eza = {
-    enable = true;
-    enableZshIntegration = true;
-    git = true;
-    extraOptions = [
-      "--icons"
-      "--group-directories-first"
-    ];
-  };
-
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;

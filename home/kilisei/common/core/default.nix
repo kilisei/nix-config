@@ -1,16 +1,35 @@
 { pkgs, ... }:
 {
   imports = [
-    ./zsh.nix
-    ./ghostty.nix
-    ./zoxide.nix
+    ./bat.nix
+    ./eza.nix
+    ./fonts.nix
+    ./fzf.nix
     ./git.nix
+    ./tv.nix
+    ./zoxide.nix
+    ./zsh.nix
   ];
 
   home.packages = with pkgs; [
-    vial
     sl
+    sops
+    du-dust
+    btop
+    wrk
+    fastfetch
+    direnv
+    gnumake
+    ripgrep
+    jq
+    cpu-x
+    dig
+    tree
+    imagemagick
   ];
 
   programs.home-manager.enable = true;
+
+  nixpkgs.config.allowUnfree = true;
+  systemd.user.startServices = "sd-switch";
 }

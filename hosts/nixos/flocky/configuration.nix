@@ -6,11 +6,13 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../common
+    ../../common
     ./udev.nix
     ./networking.nix
     ./steam.nix
     ./boot.nix
+    ./gnome.nix
+    ./display.nix
   ];
 
   sops.secrets."user/kilisei/password/login".neededForUsers = true;
@@ -18,16 +20,13 @@
     mutableUsers = false;
     users.kilisei = {
       isNormalUser = true;
-      hashedPasswordFile = config.sops.secrets."user/kilisei/password/login".path;
       shell = pkgs.zsh;
       ignoreShellProgramCheck = true;
+
+      hashedPasswordFile = config.sops.secrets."user/kilisei/password/login".path;
       extraGroups = [
         "wheel"
         "networkmanager"
-      ];
-      packages = with pkgs; [
-        home-manager
-        sops
       ];
     };
   };
@@ -64,4 +63,5 @@
       ];
     };
   };
+
 }

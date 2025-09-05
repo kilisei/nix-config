@@ -5,6 +5,7 @@
       nixpkgs,
       home-manager,
       nixvim,
+      # disko,
       ...
     }@inputs:
     let
@@ -17,7 +18,7 @@
         flocky = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
-            ./hosts/flocky/configuration.nix
+            ./hosts/nixos/flocky/configuration.nix
           ];
         };
       };
@@ -35,25 +36,30 @@
     };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable?shallow=true";
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager?shallow=true";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixvim = {
-      url = "github:nix-community/nixvim";
+      url = "github:nix-community/nixvim?shallow=true";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # disko = {
+    #   url = "github:nix-community/disko?shallow=true";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
     sops-nix = {
-      url = "github:mic92/sops-nix";
+      url = "github:mic92/sops-nix?shallow=true";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     firefox = {
-      url = "github:nix-community/flake-firefox-nightly";
+      url = "github:nix-community/flake-firefox-nightly?shallow=true";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

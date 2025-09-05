@@ -23,6 +23,7 @@
     userEmail = "git@kilisei.dev";
 
     extraConfig = {
+      commit.gpgsign = true;
       user.signingKey = "E5C78D48E7E2DD1D";
 
       init.defaultBranch = "main";
@@ -37,8 +38,6 @@
         coloring = "highlightRecent";
         date = "relative";
       };
-
-      # commit.gpgsign = true;
 
       push = {
         autoSetupRemote = true;
