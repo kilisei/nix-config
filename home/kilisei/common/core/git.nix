@@ -24,7 +24,7 @@
 
     extraConfig = {
       commit.gpgsign = true;
-      user.signingKey = "E5C78D48E7E2DD1D";
+      user.signingKey = "7D119E8D79F51621";
 
       init.defaultBranch = "main";
 
