@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ./boot.nix
     ./networking.nix
+    ./secrets.nix
     ./services
   ];
 

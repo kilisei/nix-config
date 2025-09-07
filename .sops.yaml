@@ -6,7 +6,7 @@ keys:
     - &water age1fphlgl98a2r4edthdrjwz5k2cjecm8d3338ldr8jct2nchqfvptqtux7ud
 
 creation_rules:
-  - path_regex: secrets.yaml$
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
       - age:
           - *flocky

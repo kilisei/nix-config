@@ -1,10 +1,14 @@
 {
   pkgs,
   config,
+  inputs,
   ...
 }:
 {
   imports = [
+    inputs.nixos-hardware.nixosModules.common-cpu-intel
+    inputs.nixos-hardware.nixosModules.common-gpu-amd
+    inputs.nixos-hardware.nixosModules.common-pc-ssd
     ./hardware-configuration.nix
     ../../common
     ./udev.nix
@@ -13,6 +17,7 @@
     ./boot.nix
     ./gnome.nix
     ./display.nix
+    ./secrets.nix
   ];
 
   sops.secrets."user/kilisei/password/login".neededForUsers = true;

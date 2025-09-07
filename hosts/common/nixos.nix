@@ -51,6 +51,6 @@
 
   programs.nh = {
     enable = true;
-    flake = "/home/user/nix-config";
+    flake = "/home/kilisei/nix-config";
   };
 }

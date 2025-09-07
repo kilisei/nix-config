@@ -15,7 +15,6 @@ rec {
     astra-monitor
     unmess
     zen
-    panel-corners
     fuzzy-app-search
     awesome-tiles
   ];

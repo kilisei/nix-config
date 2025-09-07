@@ -5,7 +5,7 @@
       nixpkgs,
       home-manager,
       nixvim,
-      # disko,
+      nixos-hardware,
       ...
     }@inputs:
     let
@@ -55,15 +55,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+    };
+
     nixvim = {
       url = "github:nix-community/nixvim?shallow=true";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # disko = {
-    #   url = "github:nix-community/disko?shallow=true";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
 
     sops-nix = {
       url = "github:mic92/sops-nix?shallow=true";

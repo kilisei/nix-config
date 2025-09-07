@@ -1,7 +1,7 @@
 { config, ... }:
 let
-  mailerUser = builtins.readFile config.sops.secrets."homelab/nixlab/gitea/mailerUser".path;
-  mailerFrom = builtins.readFile config.sops.secrets."homelab/nixlab/gitea/mailerFrom".path;
+  mailerUser = "no-reply@kilisei.dev";
+  mailerFrom = "no-reply@kilisei.dev";
 in
 {
   services.gitea = {

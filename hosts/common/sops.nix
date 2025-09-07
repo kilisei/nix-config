@@ -1,6 +1,5 @@
 {
   inputs,
-  config,
   ...
 }:
 {
@@ -9,7 +8,7 @@
   ];
 
   sops = {
-    defaultSopsFile = ../../secrets.yaml;
+    defaultSopsFile = ../../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
     age = {
       sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
@@ -17,14 +16,7 @@
       generateKey = true;
     };
     secrets = {
-      "user/kilisei/password/login" = {
-        owner = config.users.users.kilisei.name;
-      };
-      "user/kilisei/password/restic" = {
-        owner = config.users.users.kilisei.name;
-        mode = "0400";
-      };
-      "homelab/nixlab/gitea/mailerPassword" = { };
+      # Global secrets
     };
   };
 }

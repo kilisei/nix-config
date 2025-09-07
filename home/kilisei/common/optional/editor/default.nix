@@ -1,9 +1,8 @@
 {
   imports = [
-    ./nvim.nix
+    ./nvim
     ./zed.nix
     ./vscode.nix
-    ./affine.nix
     ./obsidian.nix
   ];
 }

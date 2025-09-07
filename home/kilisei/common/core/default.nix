@@ -6,7 +6,6 @@
     ./fonts.nix
     ./fzf.nix
     ./git.nix
-    ./tv.nix
     ./zoxide.nix
     ./zsh.nix
   ];
