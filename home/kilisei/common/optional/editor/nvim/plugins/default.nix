@@ -6,5 +6,8 @@
     ./treesitter.nix
     ./undotree.nix
     ./oil.nix
+    ./lsp.nix
+    ./cmp.nix
+    ./autopairs.nix
   ];
 }

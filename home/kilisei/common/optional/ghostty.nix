@@ -7,6 +7,7 @@
       shell-integration = "zsh";
       theme = "GitHub-Dark-Default";
       font-family = "JetBrainsMono Nerd Font Regular";
+      font-size = 14;
       maximize = true;
       scrollback-limit = 1000000;
       mouse-hide-while-typing = true;
