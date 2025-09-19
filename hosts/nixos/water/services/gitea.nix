@@ -8,7 +8,6 @@ in
     enable = true;
     database.type = "sqlite3";
     lfs.enable = true;
-    mailerPasswordFile = config.sops.secrets."homelab/nixlab/gitea/mailerPassword".path;
     settings = {
       server = {
         DOMAIN = "gitea.home.nixlab.kilisei.dev";

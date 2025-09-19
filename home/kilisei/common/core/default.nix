@@ -25,6 +25,8 @@
     dig
     tree
     imagemagick
+    television
+    fd
   ];
 
   programs.home-manager.enable = true;

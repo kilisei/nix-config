@@ -1,26 +1,26 @@
 {
   programs.nixvim.opts = {
+    updatetime = 100; # faster completion
+
     number = true;
     relativenumber = true;
+    wrap = true;
+
     ignorecase = true;
     smartcase = true;
+    incsearch = true;
 
-    tabstop = 2;
-    softtabstop = 2;
+    tabstop = 4;
+    softtabstop = 4;
+    autoindent = true;
     expandtab = true;
-
     smartindent = true;
     shiftwidth = 2;
-    cursorline = true;
-
     scrolloff = 8;
 
     mouse = "a";
-
     swapfile = false;
-
     linebreak = true;
-
-    wrap = true;
+    undofile = true;
   };
 }

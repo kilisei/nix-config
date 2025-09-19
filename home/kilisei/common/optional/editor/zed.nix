@@ -25,6 +25,7 @@
       soft_wrap = "editor_width";
 
       base_keymap = "JetBrains";
+      hide_mouse = "on_typing";
       vim_mode = true;
       ui_font_family = "JetBrainsMonoNL Nerd Font Regular";
       ui_font_size = 16;
@@ -35,11 +36,13 @@
       buffer_font_features = {
         calt = false;
       };
+      ui_font_features = {
+        calt = false;
+      };
 
       relative_line_numbers = true;
 
       autosave = "on_focus_change";
-
       languages = {
         # "TypeScript" = {
         #   "formatter" = {
@@ -81,14 +84,14 @@
       {
         context = "Workspace";
         bindings = {
-          alt-p = [
+          space-space = [
             "task::Spawn"
             {
               task_name = "FF";
               reveal_target = "center";
             }
           ];
-          alt-f = [
+          "space-/" = [
             "task::Spawn"
             {
               task_name = "FT";

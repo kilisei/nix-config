@@ -1,8 +1,5 @@
 { pkgs, config, ... }:
 
-let
-  cfToken = builtins.readFile config.sops.secrets."homelab/nixlab/traefik/cfToken".path;
-in
 {
   services.traefik = {
     enable = true;
@@ -18,7 +15,7 @@ in
         };
       };
       log = {
-        level = "INFO";
+        level = "DEBUG";
       };
     };
 
@@ -29,9 +26,6 @@ in
             rule = "Host(`gitea.home.nixlab.kilisei.dev`)";
             entryPoints = [ "websecure" ];
             service = "gitea-service";
-            tls = {
-              certResolver = "le";
-            };
           };
         };
         services = {
@@ -42,23 +36,6 @@ in
           };
         };
       };
-    };
-
-    letsencrypt = {
-      email = "you@example.com";
-      storage = "/var/lib/traefik/acme.json";
-      certResolver = {
-        le = {
-          dnsChallenge = {
-            provider = "cloudflare";
-            delayBeforeCheck = 0;
-          };
-        };
-      };
-    };
-
-    environment = {
-      TRAEFIK_DNSCLOUDFLARE_API_TOKEN = cfToken;
     };
   };
 }

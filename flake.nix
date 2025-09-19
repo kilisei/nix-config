@@ -3,9 +3,9 @@
     {
       self,
       nixpkgs,
+      nixpkgs-stable,
       home-manager,
       nixvim,
-      nixos-hardware,
       ...
     }@inputs:
     let
@@ -15,7 +15,7 @@
     {
       nixosConfigurations = {
         flocky = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
+          specialArgs = { inherit inputs outputs nixpkgs-stable; };
           modules = [
             ./hosts/nixos/flocky/configuration.nix
           ];
@@ -49,6 +49,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable?shallow=true";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05?shallow=true";
 
     home-manager = {
       url = "github:nix-community/home-manager?shallow=true";

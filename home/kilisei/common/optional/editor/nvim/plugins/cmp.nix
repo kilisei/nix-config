@@ -1,64 +1,28 @@
 {
   programs.nixvim = {
     plugins = {
-      cmp-emoji.enable = true;
-      cmp = {
+      friendly-snippets.enable = true;
+      blink-cmp = {
         enable = true;
         settings = {
-          autoEnableSources = true;
-          experimental = {
-            ghost_text = false;
+          appearance = {
+            nerd_font_variant = "normal";
+            use_nvim_cmp_as_default = true;
           };
-          performance = {
-            debounce = 60;
-            fetchingTimeout = 200;
-            maxViewEntries = 30;
-          };
-          snippet = {
-            expand = "luasnip";
-          };
-          formatting = {
-            fields = [
-              "kind"
-              "abbr"
-              "menu"
-            ];
-          };
-          sources = [
-            { name = "git"; }
-            { name = "nvim_lsp"; }
-            { name = "emoji"; }
-            {
-              name = "buffer"; # text within current buffer
-              option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-              keywordLength = 3;
-            }
-            {
-              name = "path"; # file system paths
-              keywordLength = 3;
-            }
-            {
-              name = "luasnip"; # snippets
-              keywordLength = 3;
-            }
-          ];
 
-          mapping = {
-            "<C-b>" = "cmp.mapping.scroll_docs(-4)";
-            "<C-f>" = "cmp.mapping.scroll_docs(4)";
-            "<C-j>" = "cmp.mapping.select_next_item()";
-            "<C-k>" = "cmp.mapping.select_prev_item()";
-            "<C-Space>" = "cmp.mapping.complete()";
-            "<C-e>" = "cmp.mapping.abort()";
-            "<CR>" = "cmp.mapping.confirm({ select = true })";
+          signature.enabled = true;
+          snippets.enabled = true;
+          keymap.preset = "default";
+
+          completion.accept = {
+            documentation.auto_show = true;
+            auto_brackets = {
+              enabled = true;
+              semantic_token_resolution.enabled = true;
+            };
           };
         };
       };
-      cmp-nvim-lsp.enable = true;
-      cmp-buffer.enable = true;
-      cmp-path.enable = true;
-      cmp_luasnip.enable = true;
-      cmp-cmdline.enable = false;
     };
   };
 }

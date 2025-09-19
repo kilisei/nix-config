@@ -1,9 +1,9 @@
-{ lib, ... }:
 {
   programs.nixvim = {
     plugins = {
       lsp-lines.enable = true;
       lsp-format.enable = true;
+      lsp-status.enable = true;
       lsp = {
         enable = true;
         inlayHints = true;
@@ -17,7 +17,11 @@
           ts_ls.enable = true;
           templ.enable = true;
           tailwindcss.enable = true;
-          rust_analyzer.enable = true;
+          rust_analyzer = {
+            enable = true;
+            installCargo = true;
+            installRustc = true;
+          };
           eslint.enable = true;
           volar.enable = true;
           clangd.enable = true;
@@ -25,39 +29,52 @@
         keymaps = {
           silent = true;
           lspBuf = {
-            gd = {
-              action = "definition";
-              desc = "Goto Definition";
-            };
-            gr = {
-              action = "references";
-              desc = "Goto References";
-            };
-            gD = {
-              action = "declaration";
-              desc = "Goto Declaration";
-            };
-            gI = {
-              action = "implementation";
-              desc = "Goto Implementation";
-            };
-            gT = {
-              action = "type_definition";
-              desc = "Type Definition";
-            };
-            K = {
-              action = "hover";
-              desc = "Hover";
-            };
-            "<leader>cw" = {
-              action = "workspace_symbol";
-              desc = "Workspace Symbol";
-            };
-            "<leader>cr" = {
+            "grn" = {
               action = "rename";
-              desc = "Rename";
+              desc = "LSP: [R]e[n]ame";
+            };
+            "gra" = {
+              action = "code_action";
+              desc = "LSP: [G]oto Code [A]ction";
+            };
+            "grD" = {
+              action = "declaration";
+              desc = "LSP: [G]oto [D]eclaration";
             };
           };
+          # Telescope-based LSP functions
+          extra = [
+            {
+              key = "grr";
+              action.__raw = "require('telescope.builtin').lsp_references";
+              options.desc = "LSP: [G]oto [R]eferences";
+            }
+            {
+              key = "gri";
+              action.__raw = "require('telescope.builtin').lsp_implementations";
+              options.desc = "LSP: [G]oto [I]mplementation";
+            }
+            {
+              key = "grd";
+              action.__raw = "require('telescope.builtin').lsp_definitions";
+              options.desc = "LSP: [G]oto [D]efinition";
+            }
+            {
+              key = "gO";
+              action.__raw = "require('telescope.builtin').lsp_document_symbols";
+              options.desc = "LSP: Open Document Symbols";
+            }
+            {
+              key = "gW";
+              action.__raw = "require('telescope.builtin').lsp_dynamic_workspace_symbols";
+              options.desc = "LSP: Open Workspace Symbols";
+            }
+            {
+              key = "grt";
+              action.__raw = "require('telescope.builtin').lsp_type_definitions";
+              options.desc = "LSP: [G]oto [T]ype Definition";
+            }
+          ];
         };
       };
     };

@@ -4,7 +4,6 @@
     yubikey-manager
     yubioath-flutter
     pam_u2f
-    opensc
   ];
 
   programs.yubikey-touch-detector = {
