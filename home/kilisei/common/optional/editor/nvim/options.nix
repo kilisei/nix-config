@@ -21,6 +21,7 @@
     mouse = "a";
     swapfile = false;
     linebreak = true;
+    cursorline = true;
     undofile = true;
   };
 }

@@ -6,7 +6,7 @@
   };
 
   services = {
-    pulseaudio.enable = false;
+    pulseaudio.enable = true;
     pipewire = {
       enable = true;
       pulse.enable = true;

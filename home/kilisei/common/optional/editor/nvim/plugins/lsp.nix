@@ -27,7 +27,6 @@
           clangd.enable = true;
         };
         keymaps = {
-          silent = true;
           lspBuf = {
             "grn" = {
               action = "rename";

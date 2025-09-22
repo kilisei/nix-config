@@ -37,6 +37,7 @@
   };
 
   system.stateVersion = "24.11";
+  system.name = "flocky";
 
   services.restic.backups = {
     "kilisei@flocky" = {
