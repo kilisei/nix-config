@@ -1,15 +1,13 @@
 { pkgs, ... }:
 {
-  programs.nixvim = {
-    plugins.treesitter = {
-      enable = true;
-      settings = {
-        indent.enable = true;
-        highlight.enable = true;
-        text-objects.enable = true;
-      };
-      nixvimInjections = true;
-      grammarPackages = pkgs.vimPlugins.nvim-treesitter.allGrammars;
+  programs.nixvim.plugins.treesitter = {
+    enable = true;
+    settings = {
+      indent.enable = true;
+      highlight.enable = true;
+      text-objects.enable = true;
     };
+    nixvimInjections = true;
+    grammarPackages = pkgs.vimPlugins.nvim-treesitter.allGrammars;
   };
 }

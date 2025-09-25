@@ -6,7 +6,7 @@
     keymaps = [
       {
         mode = "n";
-        key = "<leader>pv";
+        key = "<leader>e";
         action = "<cmd>Oil<cr>";
         options = {
           desc = "Oil File browser";

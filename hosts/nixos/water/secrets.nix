@@ -9,7 +9,6 @@
 
   sops = {
     secrets = {
-      "homelab/nixlab/gitea/mailerPassword" = { };
     };
   };
 }

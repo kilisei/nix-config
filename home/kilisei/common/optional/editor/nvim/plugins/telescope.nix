@@ -49,8 +49,8 @@
         options.desc = "[S]earch Recent Files (\".\" for repeat)";
       };
       "<leader><leader>" = {
-        action = "buffers";
-        options.desc = "[ ] Find existing buffers";
+        action = "find_files";
+        options.desc = "[ ] Find files";
       };
     };
   };

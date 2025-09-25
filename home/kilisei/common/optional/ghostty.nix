@@ -5,7 +5,7 @@
 
     settings = {
       shell-integration = "zsh";
-      theme = "GitHub-Dark-Default";
+      theme = "GitHub Dark Default";
       font-family = "JetBrainsMono Nerd Font Regular";
       font-size = 14;
       maximize = true;

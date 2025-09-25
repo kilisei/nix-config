@@ -6,7 +6,7 @@
     lunar-client
     mesa
     vulkan-tools
-      ];
+  ];
   nixpkgs.overlays = [
     (final: prev: {
       jdk8 = final.openjdk8-bootstrap;

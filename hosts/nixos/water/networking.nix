@@ -4,9 +4,9 @@
   networking.firewall = rec {
     enable = true;
     allowedTCPPorts = [
-      22
       80
       443
+      9090
     ];
     allowedUDPPorts = allowedTCPPorts;
   };

@@ -13,7 +13,16 @@
           gopls.enable = true;
           sqls.enable = true;
           html.enable = true;
-          htmx.enable = true;
+          htmx = {
+            enable = true;
+            settings = {
+              filetypes = [
+                ".templ"
+                ".html"
+                ".tmpl"
+              ];
+            };
+          };
           ts_ls.enable = true;
           templ.enable = true;
           tailwindcss.enable = true;

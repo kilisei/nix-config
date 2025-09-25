@@ -3,9 +3,7 @@
     {
       self,
       nixpkgs,
-      nixpkgs-stable,
       home-manager,
-      nixvim,
       ...
     }@inputs:
     let
@@ -13,36 +11,23 @@
       inherit (self) outputs;
     in
     {
-      nixosConfigurations = {
-        flocky = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs nixpkgs-stable; };
-          modules = [
-            ./hosts/nixos/flocky/configuration.nix
-          ];
-        };
-        water = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
-          modules = [
-            ./hosts/nixos/water/configuration.nix
-          ];
-        };
-      };
+      nixosConfigurations = builtins.listToAttrs (
+        map (host: {
+          name = host;
+          value = nixpkgs.lib.nixosSystem {
+            specialArgs = {
+              inherit inputs outputs;
+            };
+            modules = [ ./hosts/nixos/${host}/configuration.nix ];
+          };
+        }) (builtins.attrNames (builtins.readDir ./hosts/nixos))
+      );
 
       homeConfigurations = {
-        # Main desktop
         "kilisei@flocky" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
           extraSpecialArgs = { inherit inputs outputs system; };
-          modules = [
-            ./home/kilisei/flocky.nix
-          ];
-        };
-        "kilisei@water" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.${system};
-          extraSpecialArgs = { inherit inputs outputs system; };
-          modules = [
-            ./home/kilisei/water.nix
-          ];
+          modules = [ ./home/kilisei/flocky.nix ];
         };
       };
     };
@@ -52,12 +37,15 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05?shallow=true";
 
     home-manager = {
-      url = "github:nix-community/home-manager?shallow=true";
+      url = "github:nix-community/home-manager/release-25.05?shallow=true";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-hardware = {
-      url = "github:NixOS/nixos-hardware/master";
+    hardware.url = "github:nixos/nixos-hardware";
+
+    disko = {
+      url = "github:nix-community/disko?shallow=true";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixvim = {

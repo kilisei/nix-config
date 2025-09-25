@@ -80,26 +80,5 @@
         # };
       };
     };
-    userKeymaps = [
-      {
-        context = "Workspace";
-        bindings = {
-          space-space = [
-            "task::Spawn"
-            {
-              task_name = "FF";
-              reveal_target = "center";
-            }
-          ];
-          "space-/" = [
-            "task::Spawn"
-            {
-              task_name = "FT";
-              reveal_target = "center";
-            }
-          ];
-        };
-      }
-    ];
   };
 }

@@ -8,7 +8,10 @@ keys:
 creation_rules:
   - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
-      - age:
-          - *flocky
-          - *water
-          - *kilisei
+    - age:
+        # Hosts
+        - *flocky
+        - *water
+
+        # Users
+        - *kilisei

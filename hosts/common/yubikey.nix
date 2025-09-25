@@ -23,6 +23,7 @@
   };
 
   security.pam = {
+    rssh.enable = true;
     u2f = {
       enable = true;
       settings.cue = true;
@@ -30,7 +31,10 @@
     };
     services = {
       login.u2fAuth = true;
-      sudo.u2fAuth = true;
+      sudo = {
+        rssh = true;
+        u2fAuth = true;
+      };
     };
     sshAgentAuth.enable = true;
   };
