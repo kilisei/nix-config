@@ -4,3 +4,21 @@ if a human is reading this, please feel free to make pr's to help point out an i
 
 Hosts:
 - flocky (kilisei@flocky) is the only host I have for now.
+
+
+# TODOS
+- [] make sops work on new hosts easily
+- [] auto update 
+- [] github workflows to check ? things?
+- [] auto deploy homelab on git push
+- [] polish nixvim config
+- [] homelab 
+    - [] traefik with tls
+    - [] authenik or some auth provider
+    - [] password manager vault warden?
+    - [] gitea
+    - [] gitea actions act runner 
+    - [] some dashboard for web
+    - [] game servers
+    - []
+

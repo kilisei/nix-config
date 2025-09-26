@@ -17,8 +17,5 @@
       keyFile = "/var/lib/sops-nix/key.txt";
       generateKey = true;
     };
-    secrets = {
-      "homelab/nixlab/traefik/env" = { };
-    };
   };
 }

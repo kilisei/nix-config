@@ -8,7 +8,6 @@
 {
   environment.systemPackages = with pkgs; [
     nixd
-    nixfmt-rfc-style
     nixfmt-tree
   ];
 
@@ -17,14 +16,9 @@
       flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
     in
     {
-      gc = {
-        automatic = true;
-        dates = "weekly";
-        options = "--delete-older-than 30d";
-      };
       optimise = {
         automatic = true;
-        dates = [ "weekly" ];
+        dates = [ "daily" ];
       };
 
       settings = {
@@ -32,25 +26,34 @@
           "nix-command"
           "flakes"
         ];
+        connect-timeout = 5;
+        min-free = 128000000;
+        max-free = 1000000000;
+
+        keep-outputs = true;
+
         flake-registry = "";
         nix-path = config.nix.nixPath;
+        substituters = [
+          "https://cache.nixos.org" # Official global cache
+          "https://nix-community.cachix.org" # Community packages
+        ];
       };
+
       channel.enable = false;
       registry = lib.mapAttrs (_: flake: { inherit flake; }) flakeInputs;
       nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
     };
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = (_: true);
-    };
+  nixpkgs.config = {
+    allowUnfree = true;
+    allowUnfreePredicate = (_: true);
   };
-
-  environment.enableAllTerminfo = true;
 
   programs.nh = {
     enable = true;
-    flake = "/home/kilisei/nix-config";
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 20d --keep 20";
+    flake = "/home/user/${config.hostSpec.home}/nix-config";
   };
 }

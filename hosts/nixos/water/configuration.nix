@@ -14,7 +14,7 @@ in
     inputs.hardware.nixosModules.common-cpu-amd
     inputs.hardware.nixosModules.common-pc-ssd
 
-    ../../common
+    ../../common/core
     ./hardware-configuration.nix
     ./boot.nix
     ./networking.nix
@@ -47,7 +47,10 @@ in
     enable = true;
     settings = {
       PasswordAuthentication = false;
-      AllowUsers = [ config.users.users.kilisei.name "root" ];
+      AllowUsers = [
+        config.users.users.kilisei.name
+        "root"
+      ];
     };
   };
 

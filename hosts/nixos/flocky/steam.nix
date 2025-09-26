@@ -5,9 +5,6 @@
     gamescopeSession.enable = true;
   };
   programs.gamemode.enable = true;
-  programs.nix-ld = {
-    enable = true;
-  };
 
   environment.systemPackages = with pkgs; [
     protonup
