@@ -14,10 +14,10 @@
     ../../common/optional/restic.nix
     ../../common/optional/audio.nix
     ../../common/optional/yubikey.nix
+    ../../common/optional/desktop
 
     ./hardware-configuration.nix
     ./networking.nix
-    ./gnome.nix
     inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     inputs.nixos-hardware.nixosModules.common-pc-ssd
@@ -33,6 +33,7 @@
       # mode = "0400";
     };
   };
+  hostSpec.hostName = "flocky";
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader = {
@@ -45,6 +46,7 @@
       useOSProber = true;
     };
   };
+  virtualisation.docker.enable = true;
 
   services.udev.extraRules = ''
     # Universal rule for all Vial-compatible keyboards

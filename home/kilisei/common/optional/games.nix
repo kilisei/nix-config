@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    modrinth-app
+    # modrinth-app
     prismlauncher
     lunar-client
     mesa
