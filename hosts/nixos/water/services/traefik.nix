@@ -39,9 +39,8 @@
       };
 
       log = {
-        level = "DEBUG";
+        level = "TRACE";
         filePath = "${config.services.traefik.dataDir}/traefik.log";
-        format = "json";
       };
 
       certificatesResolvers.cloudflare.acme = {
@@ -58,34 +57,15 @@
       };
     };
 
-    dynamicConfigOptions = {
-      http = {
-        routers = {
-          "traefik-metrics" = {
-            rule = "Host(`traefik.home.nixlab.kilisei.dev`)";
-            entryPoints = [
-              "web"
-              "websecure"
-            ];
-            service = "traefik@internal";
-          };
-
-          "gitea-router" = {
-            rule = "Host(`gitea.home.nixlab.kilisei.dev`)";
-            entryPoints = [
-              "websecure"
-              "web"
-            ];
-            service = "gitea";
-          };
-        };
-
-        services = {
-          gitea = {
-            loadBalancer = {
-              servers = [ { url = "http://127.0.0.1:3000"; } ];
-            };
-          };
+    dynamicConfigOptions.http = {
+      routers = {
+        "traefik-metrics" = {
+          rule = "Host(`traefik.home.nixlab.kilisei.dev`)";
+          entryPoints = [
+            "web"
+            "websecure"
+          ];
+          service = "traefik@internal";
         };
       };
     };

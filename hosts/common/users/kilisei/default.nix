@@ -5,7 +5,7 @@
   ...
 }:
 let
-  pubKeys = lib.filesystem.listFilesRecursive "../../../secrets/keys";
+  pubKeys = lib.filesystem.listFilesRecursive "../../../../secrets/keys";
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in
 {

@@ -8,7 +8,7 @@
   ];
 
   sops = {
-    defaultSopsFile = ../../secrets/secrets.yaml;
+    defaultSopsFile = ../../../secrets/secrets.yaml;
     validateSopsFiles = false;
     defaultSopsFormat = "yaml";
 

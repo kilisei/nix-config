@@ -1,6 +1,6 @@
-{ pkgs, ... }:
-{
-  programs.steam = {
+{pkgs,...}:{
+  hardware.xone.enable = true;
+   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
   };

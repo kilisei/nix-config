@@ -45,7 +45,6 @@
         ];
         metrics_path = "/metrics";
       }
-
     ];
   };
 

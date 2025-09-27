@@ -6,7 +6,6 @@
     allowedTCPPorts = [
       80
       443
-      9090
     ];
     allowedUDPPorts = allowedTCPPorts;
   };

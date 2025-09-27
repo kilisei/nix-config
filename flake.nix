@@ -18,7 +18,7 @@
             specialArgs = {
               inherit inputs outputs;
             };
-            modules = [ ./hosts/nixos/${host}/configuration.nix ];
+            modules = [ ./hosts/nixos/${host} ];
           };
         }) (builtins.attrNames (builtins.readDir ./hosts/nixos))
       );
@@ -44,6 +44,10 @@
     disko = {
       url = "github:nix-community/disko?shallow=true";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
     };
 
     nixvim = {

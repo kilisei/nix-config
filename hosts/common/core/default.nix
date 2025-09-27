@@ -9,8 +9,6 @@
     ./nixos.nix
   ];
 
-  home-manager.useGlobalPkgs = true;
-
   environment.enableAllTerminfo = true;
 
   networking = {
@@ -25,6 +23,7 @@
     grub = {
       enable = true;
       device = "nodev";
+      configurationLimit = 3;
       efiSupport = true;
       useOSProber = true;
     };

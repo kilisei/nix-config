@@ -11,6 +11,7 @@
   ];
 
   home.packages = with pkgs; [
+    man-pages
     sl
     sops
     du-dust
@@ -27,6 +28,7 @@
     imagemagick
     television
     fd
+    act
   ];
 
   programs.home-manager.enable = true;

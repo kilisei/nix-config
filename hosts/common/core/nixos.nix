@@ -53,7 +53,7 @@
   programs.nh = {
     enable = true;
     clean.enable = true;
-    clean.extraArgs = "--keep-since 20d --keep 20";
+    clean.extraArgs = "--delete-older-than 20d";
     flake = "/home/user/${config.hostSpec.home}/nix-config";
   };
 }

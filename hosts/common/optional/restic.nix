@@ -1,13 +1,20 @@
 { config, ... }:
+let
+  host = config.hostSpec.hostName;
+  user = config.hostSpec.primaryUsername;
+  home = "/home/${user}";
+  passwordFile = config.sops.secrets."user/${user}/password/restic".path;
+  backupName = "${user}@${host}";
+in
 {
   services.restic.backups = {
-    "kilisei@flocky" = {
+    "${backupName}" = {
       initialize = true;
-      user = "kilisei";
-      passwordFile = config.sops.secrets."user/kilisei/password/restic".path;
-      repository = "/run/media/kilisei/WD_BLACK/backup/backups/restic/kilisei@flocky";
+      user = user;
+      passwordFile = passwordFile;
+      repository = "/run/media/kilisei/WD_BLACK/backup/backups/restic/${backupName}";
       paths = [
-        "/home/kilisei"
+        home
       ];
       exclude = [
         ".git"

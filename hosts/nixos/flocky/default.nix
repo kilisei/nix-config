@@ -1,27 +1,50 @@
 {
   pkgs,
+  inputs,
+  config,
   ...
 }:
 {
   imports = [
-    ./hardware-configuration.nix
+    ../../../modules/hosts/common/core
+
+    ../../common/users/kilisei
     ../../common/core
+    ../../common/optional/gaming.nix
+    ../../common/optional/restic.nix
+    ../../common/optional/audio.nix
+    ../../common/optional/yubikey.nix
+
+    ./hardware-configuration.nix
     ./networking.nix
     ./steam.nix
     ./gnome.nix
-    ./secrets.nix
+    inputs.nixos-hardware.nixosModules.common-cpu-intel
+    inputs.nixos-hardware.nixosModules.common-gpu-amd
+    inputs.nixos-hardware.nixosModules.common-pc-ssd
+    inputs.sops-nix.nixosModules.sops
   ];
 
+  sops.secrets = {
+    "user/kilisei/password/login" = {
+      owner = config.users.users.kilisei.name;
+    };
+    "user/kilisei/password/restic" = {
+      owner = config.users.users.kilisei.name;
+      # mode = "0400";
+    };
+  };
+
   hostSpec = {
+    primaryUsername = "kilisei";
     hostName = "flocky";
   };
 
-  boot.kernelModules = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   services = {
     desktopManager.gnome.enable = true;
     displayManager.gdm.enable = true;
-    xserver.videoDrivers = [ "amdgpu" ];
   };
 
   services.udev.extraRules = ''
