@@ -19,4 +19,4 @@ jobs:
           mv treefmt /usr/local/bin/
 
       - name: Check formatting
-        run: treefmt --fail-on-change
+        run: treefmt . --fail-on-change
