@@ -28,5 +28,4 @@ in
     openssh.authorizedKeys.keys = lib.lists.forEach pubKeys (key: builtins.readFile key);
   };
 
-  programs.git.enable = true;
 }

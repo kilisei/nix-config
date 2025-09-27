@@ -1,31 +1,37 @@
 {
   config,
+  inputs,
+  pkgs,
   ...
 }:
 {
   imports = [
+    inputs.home-manager.nixosModules.home-manager
+    inputs.sops-nix.nixosModules.sops
     ./sops.nix
     ./i18n.nix
     ./nixos.nix
   ];
 
-  environment.enableAllTerminfo = true;
+  home-manager.useGlobalPkgs = true;
+
+  hostSpec = {
+    primaryUsername = "kilisei";
+  };
 
   networking = {
-    enableIPv6 = false;
-    hostName = config.hostSpec.hostName;
     networkmanager.enable = true;
+    hostName = config.hostSpec.hostName;
+    enableIPv6 = false;
   };
   system.name = config.hostSpec.hostName;
 
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    grub = {
-      enable = true;
-      device = "nodev";
-      configurationLimit = 3;
-      efiSupport = true;
-      useOSProber = true;
-    };
+  programs.git.enable = true;
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    promptInit = "source ''${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
   };
+
+  environment.enableAllTerminfo = true;
 }

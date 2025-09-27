@@ -17,7 +17,6 @@
 
     ./hardware-configuration.nix
     ./networking.nix
-    ./steam.nix
     ./gnome.nix
     inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.nixos-hardware.nixosModules.common-gpu-amd
@@ -35,16 +34,16 @@
     };
   };
 
-  hostSpec = {
-    primaryUsername = "kilisei";
-    hostName = "flocky";
-  };
-
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  services = {
-    desktopManager.gnome.enable = true;
-    displayManager.gdm.enable = true;
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    grub = {
+      enable = true;
+      device = "nodev";
+      configurationLimit = 3;
+      efiSupport = true;
+      useOSProber = true;
+    };
   };
 
   services.udev.extraRules = ''
