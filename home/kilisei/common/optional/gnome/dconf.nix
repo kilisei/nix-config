@@ -32,9 +32,17 @@ rec {
     };
     "org/gnome/desktop/interface" = {
       accent-color = "slate";
-      color-scheme = "prefer-dark";
+      clock-format="24h";
+      clock-show-seconds=false;
+      clock-show-weekday=true;
+      color-scheme="prefer-dark";
+      monospace-font-name="JetBrainsMono Nerd Font 11";
+      document-font-name="JetrainsMonoNL Nerd Font 11";
+      font-name="JetBrainsMonoNL Nerd Font 11";
     };
-
+    "org/gnome/shell/extensions/user-theme" = {
+      name="Colloid-Dark";
+    };
     "org/gnome/desktop/input-sources" = {
       sources = [
         (mkTuple [

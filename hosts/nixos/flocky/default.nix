@@ -33,20 +33,27 @@
       # mode = "0400";
     };
   };
-  hostSpec.hostName = "flocky";
+  hostSpec = {
+    hostName = "flocky";
+  };
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    grub = {
-      enable = true;
-      device = "nodev";
-      configurationLimit = 3;
-      efiSupport = true;
-      useOSProber = true;
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    kernelParams = [
+      "amdgpu.dcdebugmask=0x400" # Allegedly might help with some crashes
+      "split_lock_detect=off" # Alleged gaming perf increase
+    ];
+    loader = {
+      efi.canTouchEfiVariables = true;
+      grub = {
+        enable = true;
+        device = "nodev";
+        configurationLimit = 3;
+        efiSupport = true;
+        useOSProber = true;
+      };
     };
   };
-  virtualisation.docker.enable = true;
 
   services.udev.extraRules = ''
     # Universal rule for all Vial-compatible keyboards

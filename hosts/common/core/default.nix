@@ -1,7 +1,5 @@
 {
-  config,
   inputs,
-  pkgs,
   ...
 }:
 {
@@ -11,6 +9,7 @@
     ./sops.nix
     ./i18n.nix
     ./nixos.nix
+    ./networking.nix
   ];
 
   home-manager.useGlobalPkgs = true;
@@ -19,18 +18,9 @@
     primaryUsername = "kilisei";
   };
 
-  networking = {
-    networkmanager.enable = true;
-    hostName = config.hostSpec.hostName;
-    enableIPv6 = false;
-  };
-  system.name = config.hostSpec.hostName;
-
   programs.git.enable = true;
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
-    promptInit = "source ''${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
   };
 
   environment.enableAllTerminfo = true;

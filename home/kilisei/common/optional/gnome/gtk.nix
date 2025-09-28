@@ -3,11 +3,12 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Adwaita-dark";
+      name = "Colloid-Dark";
+      package = pkgs.colloid-gtk-theme;
     };
     iconTheme = {
-      name = "Tela-circle-dark";
-      package = pkgs.tela-circle-icon-theme;
+      name = "Colloid-Dark";
+      package = pkgs.colloid-icon-theme;
     };
   };
   home.packages = with pkgs; [
