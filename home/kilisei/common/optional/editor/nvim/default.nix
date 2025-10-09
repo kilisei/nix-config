@@ -6,7 +6,7 @@
     ./plugins
     ./keymaps.nix
     ./options.nix
-    ./spell.nix
+    # ./spell.nix
   ];
 
   programs.nixvim = {
@@ -14,6 +14,7 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
+performance.byteCompileLua.enable = true;
 
     clipboard.providers.wl-copy.enable = true;
     plugins.web-devicons.enable = true;

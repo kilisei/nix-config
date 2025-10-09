@@ -1,5 +1,3 @@
 {
-  programs.nixvim = {
-    plugins.cloak.enable = true;
-  };
+  programs.nixvim.plugins.cloak.enable = true;
 }

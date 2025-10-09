@@ -1,6 +1,5 @@
 {
-  programs.nixvim = {
-    plugins = {
+  programs.nixvim.plugins = {
       lsp-lines.enable = true;
       lsp-format.enable = true;
       lsp-status.enable = true;
@@ -32,8 +31,10 @@
             installRustc = true;
           };
           eslint.enable = true;
-          volar.enable = true;
+          vue_ls.enable = true;
           clangd.enable = true;
+
+          harper_ls.enable = true;
         };
         keymaps = {
           lspBuf = {
@@ -85,6 +86,5 @@
           ];
         };
       };
-    };
   };
 }

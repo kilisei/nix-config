@@ -15,7 +15,6 @@
         action = "media_files";
         options.desc = "[S]earch [M]edia";
       };
-
       "<leader>sk" = {
         action = "keymaps";
         options.desc = "[S]earch [K]eymaps";

@@ -37,6 +37,7 @@
     hostName = "flocky";
   };
 
+  programs.nix-ld.enable = true;
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [
@@ -60,5 +61,5 @@
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
   '';
 
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
 }

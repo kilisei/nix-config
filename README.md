@@ -7,6 +7,7 @@ Hosts:
 
 
 # TODOS
+- [] seperate home partition (optionl)
 - [] make sops work on new hosts easily
 - [] auto update 
 - [] github workflows to check ? things?

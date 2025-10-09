@@ -37,7 +37,7 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05?shallow=true";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05?shallow=true";
+      url = "github:nix-community/home-manager?shallow=true";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

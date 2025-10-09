@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    difftastic
     diff-so-fancy
     git-lfs
     git-absorb
@@ -49,9 +48,7 @@
       rebase.autoStash = true;
       rerere.enabled = true;
 
-      diff-so-fancy.markEmptyLines = true;
       diff = {
-        external = "difft";
         context = 3;
         interHunkContext = 10;
       };
@@ -65,6 +62,7 @@
         showUntrackedFiles = "all";
       };
 
+      diff-so-fancy.markEmptyLines = true;
       pager = {
         branch = false;
         diff = "diff-so-fancy | bat --style=plain";
