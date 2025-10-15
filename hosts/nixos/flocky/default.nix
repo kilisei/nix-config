@@ -24,6 +24,13 @@
     inputs.sops-nix.nixosModules.sops
   ];
 
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+    };
+  };
+
   sops.secrets = {
     "user/kilisei/password/login" = {
       owner = config.users.users.kilisei.name;
