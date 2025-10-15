@@ -15,6 +15,7 @@
     ../../common/optional/audio.nix
     ../../common/optional/yubikey.nix
     ../../common/optional/desktop
+    ../../common/optional/vitualisation
 
     ./hardware-configuration.nix
     ./networking.nix
@@ -23,13 +24,6 @@
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.sops-nix.nixosModules.sops
   ];
-
-  virtualisation.docker = {
-    enable = true;
-    rootless = {
-      enable = true;
-    };
-  };
 
   sops.secrets = {
     "user/kilisei/password/login" = {
@@ -40,11 +34,13 @@
       # mode = "0400";
     };
   };
+
   hostSpec = {
     hostName = "flocky";
   };
 
   programs.nix-ld.enable = true;
+
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [

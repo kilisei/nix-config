@@ -24,6 +24,7 @@ in
       "git"
       "audio"
       "video"
+      "docker"
     ];
     openssh.authorizedKeys.keys = lib.lists.forEach pubKeys (key: builtins.readFile key);
   };
