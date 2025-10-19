@@ -29,6 +29,8 @@
     television
     fd
     act
+    nodejs_latest
+    clang
   ];
 
   programs.home-manager.enable = true;

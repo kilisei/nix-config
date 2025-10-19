@@ -7,20 +7,17 @@
     shellAliases = {
       nix-shell = "nix-shell --command zsh";
       nix-dev = "nix develop --command zsh";
-      cat = "bat";
+      man = "batman";
       ls = "eza";
       ga = "git add";
       gc = "git commit";
       gco = "git checkout";
       gl = "git log --graph --all --pretty=format:'%C(magenta)%h %C(white)%an  %ar%C(blue)  %D%n%s%n'";
-      gd = "git diff";
+      gd = "git diff --output-indicator-new=' ' --output-indicator-old=' '";
       gp = "git push";
       gr = "git reset";
       gs = "git status";
       gu = "git pull";
-      vim = "nvim";
-      vi = "nvim";
-      v = "nvim";
       k = "kubectl";
     };
 

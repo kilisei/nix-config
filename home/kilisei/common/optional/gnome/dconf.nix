@@ -17,6 +17,7 @@ rec {
     zen
     fuzzy-app-search
     awesome-tiles
+    bluetooth-battery-meter
   ];
 
   dconf.enable = true;
@@ -25,23 +26,31 @@ rec {
     "org/gnome/shell/extensions/just-perfection" = {
       animation = 2;
     };
+    "org/gnome/shell/extensions/Bluetooth-Battery-Meter" = {
+      enable-battery-indicator-text = false;
+      enable-battery-level-text = true;
+      enable-upower-level-icon = true;
+      sort-devices-by-history = true;
+      swap-icon-text = true;
+    };
+
     "org/gnome/desktop/background" = {
-      picture-uri = "file://${../../../assets/wallpaper4.jpg}";
-      picture-uri-dark = "file://${../../../assets/green.jpg}";
+      picture-uri = "file://${../../../assets/green-ascii-art.png}";
+      picture-uri-dark = "file://${../../../assets/green-ascii-art.png}";
       picture-options = "zoom";
     };
     "org/gnome/desktop/interface" = {
       accent-color = "slate";
-      clock-format="24h";
-      clock-show-seconds=false;
-      clock-show-weekday=true;
-      color-scheme="prefer-dark";
-      monospace-font-name="JetBrainsMono Nerd Font 11";
-      document-font-name="JetrainsMonoNL Nerd Font 11";
-      font-name="JetBrainsMonoNL Nerd Font 11";
+      clock-format = "24h";
+      clock-show-seconds = false;
+      clock-show-weekday = true;
+      color-scheme = "prefer-dark";
+      monospace-font-name = "JetBrainsMono Nerd Font 11";
+      document-font-name = "JetrainsMonoNL Nerd Font 11";
+      font-name = "JetBrainsMonoNL Nerd Font 11";
     };
     "org/gnome/shell/extensions/user-theme" = {
-      name="Colloid-Dark";
+      name = "Colloid-Dark";
     };
     "org/gnome/desktop/input-sources" = {
       sources = [

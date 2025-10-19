@@ -24,8 +24,5 @@
       vulkan-tools
     ];
     winePackages = [ pkgs.wineWow64Packages.full ];
-    runners = {
-      wine.package = pkgs.wine-wayland;
-    };
   };
 }

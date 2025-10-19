@@ -11,7 +11,6 @@
           };
 
           signature.enabled = true;
-          snippets.enabled = true;
           keymap.preset = "default";
 
           completion.accept = {

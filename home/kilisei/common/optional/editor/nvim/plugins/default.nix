@@ -1,7 +1,5 @@
 {
   imports = [
-    ./cloak.nix
-    ./gitsign.nix
     ./comment.nix
     ./brackets.nix
     ./telescope.nix

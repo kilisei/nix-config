@@ -1,4 +1,5 @@
-{config,...}:{
+{ config, ... }:
+{
   networking = {
     networkmanager.enable = true;
     hostName = config.hostSpec.hostName;

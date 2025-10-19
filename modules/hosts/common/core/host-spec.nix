@@ -23,12 +23,17 @@
           description = "The home directory of the user";
           default = "/home/${config.hostSpec.primaryUsername}";
         };
-
         # Configuration Settings
         users = lib.mkOption {
           type = lib.types.listOf lib.types.str;
           description = "An attribute set of all users on the host";
           default = [ config.hostSpec.primaryUsername ];
+        };
+
+        configDir = lib.mkOption {
+          type = lib.types.str;
+          description = "The home directory of the configuration";
+          default = "${config.hostSpec.home}/nix-config";
         };
       };
     };

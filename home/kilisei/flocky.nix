@@ -1,8 +1,4 @@
 {
-  nixpkgs.config.permittedInsecurePackages = [
-    "libsoup-2.74.3"
-  ];
-
   imports = [
     common/core
 
@@ -26,4 +22,6 @@
     username = "kilisei";
     homeDirectory = "/home/${username}";
   };
+
+  xdg.userDirs.enable = true;
 }

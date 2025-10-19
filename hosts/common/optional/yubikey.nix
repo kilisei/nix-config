@@ -6,7 +6,7 @@
     pam_u2f
     yubikey-personalization
     yubikey-agent
-    yubico-pam  
+    yubico-pam
   ];
 
   programs.yubikey-touch-detector = {

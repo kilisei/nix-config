@@ -18,19 +18,27 @@
   programs.git = {
     enable = true;
     package = pkgs.gitAndTools.gitFull;
-    userName = "kilisei";
-    userEmail = "git@kilisei.dev";
 
-    extraConfig = {
-      commit.gpgsign = true;
-      user.signingKey = "7D119E8D79F51621";
+    settings.user = {
+      name = "kilisei";
+      email = "git@kilisei.dev";
+      signingKey = "7D119E8D79F51621";
+    };
 
-      init.defaultBranch = "main";
-
+    settings = {
       core = {
         compression = 9;
         autocrlf = "input";
         whitespace = "error";
+        editor = "nvim";
+      };
+
+      init = {
+        defaultBranch = "main";
+      };
+
+      commit = {
+        gpgsign = true;
       };
 
       blame = {
@@ -43,14 +51,25 @@
         default = "current";
       };
 
-      pull.rebase = true;
+      pull = {
+        rebase = true;
+      };
 
-      rebase.autoStash = true;
+      rebase =  {
+        autoStash = true;
+      };
       rerere.enabled = true;
 
       diff = {
         context = 3;
         interHunkContext = 10;
+        renames = "copies";
+      };
+      diff-so-fancy.markEmptyLines = true;
+
+      pager = {
+        branch = false;
+        diff = "diff-so-fancy | $PAGER";
       };
 
       log.abbrevCommit = true;
@@ -60,12 +79,6 @@
         short = true;
         showStash = true;
         showUntrackedFiles = "all";
-      };
-
-      diff-so-fancy.markEmptyLines = true;
-      pager = {
-        branch = false;
-        diff = "diff-so-fancy | bat --style=plain";
       };
     };
   };
