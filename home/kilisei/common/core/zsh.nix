@@ -19,6 +19,7 @@
       gs = "git status";
       gu = "git pull";
       k = "kubectl";
+      v = "nvim";
     };
 
     oh-my-zsh = {

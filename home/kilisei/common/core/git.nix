@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs,config, ... }:
 {
   home.packages = with pkgs; [
     diff-so-fancy
@@ -6,14 +6,14 @@
     git-absorb
   ];
 
-  services.gpg-agent = {
-    enable = true;
-    pinentry.package = pkgs.pinentry-gnome3;
-  };
-
-  programs.gpg = {
-    enable = true;
-  };
+  # services.gpg-agent = {
+  #   enable = true;
+  #   pinentry.package = pkgs.pinentry-gnome3;
+  # };
+  #
+  # programs.gpg = {
+  #   enable = true;
+  # };
 
   programs.git = {
     enable = true;
@@ -22,10 +22,14 @@
     settings.user = {
       name = "kilisei";
       email = "git@kilisei.dev";
-      signingKey = "7D119E8D79F51621";
+      signingKey = "${config.home.homeDirectory}/.ssh/id_flocky";
+      # signingKey = "7D119E8D79F51621";
     };
 
     settings = {
+      gpg = {
+        format = "ssh";
+      };
       core = {
         compression = 9;
         autocrlf = "input";
