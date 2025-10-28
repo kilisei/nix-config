@@ -6,15 +6,6 @@
     git-absorb
   ];
 
-  # services.gpg-agent = {
-  #   enable = true;
-  #   pinentry.package = pkgs.pinentry-gnome3;
-  # };
-  #
-  # programs.gpg = {
-  #   enable = true;
-  # };
-
   programs.git = {
     enable = true;
     package = pkgs.gitAndTools.gitFull;
@@ -23,13 +14,13 @@
       name = "kilisei";
       email = "git@kilisei.dev";
       signingKey = "${config.home.homeDirectory}/.ssh/id_flocky";
-      # signingKey = "7D119E8D79F51621";
     };
 
     settings = {
       gpg = {
         format = "ssh";
       };
+
       core = {
         compression = 9;
         autocrlf = "input";
