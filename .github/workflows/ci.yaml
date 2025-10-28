@@ -1,0 +1,22 @@
+# name: ci
+
+# on:
+#   push:
+#   pull_request:
+
+# jobs:
+#   checks:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
+
+#       - name: Install treefmt
+#         run: |
+#           curl -L https://github.com/numtide/treefmt/releases/download/v2.3.1/treefmt_2.3.1_linux_amd64.tar.gz -o treefmt.tar.gz
+#           tar -xzf treefmt.tar.gz
+#           chmod +x treefmt
+#           mv treefmt /usr/local/bin/
+
+#       - name: Check formatting
+#         run: treefmt . --fail-on-change

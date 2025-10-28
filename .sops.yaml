@@ -1,0 +1,17 @@
+keys:
+  - &user
+    - &kilisei age1algx6ud58yfafjrz4unfled7nftkatkt7wy2g5eky5m3s7mv4eaqsuxlt8
+  - &host
+    - &flocky age15tztdh66yv7cz0p3v3592ajapmlr9q6kh9shgpzwchscf5kjc5ts0v0c0r
+    - &water age1fphlgl98a2r4edthdrjwz5k2cjecm8d3338ldr8jct2nchqfvptqtux7ud
+
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+    - age:
+        # Hosts
+        - *flocky
+        - *water
+
+        # Users
+        - *kilisei
