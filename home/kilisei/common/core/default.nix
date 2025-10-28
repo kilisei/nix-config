@@ -31,6 +31,7 @@
     act
     nodejs_latest
     clang
+    rclone
   ];
 
   programs.home-manager.enable = true;
