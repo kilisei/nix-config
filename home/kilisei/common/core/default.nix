@@ -14,7 +14,7 @@
     man-pages
     sl
     sops
-    du-dust
+    dust
     btop
     wrk
     fastfetch

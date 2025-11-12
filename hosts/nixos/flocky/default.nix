@@ -2,13 +2,15 @@
   pkgs,
   inputs,
   config,
+  lib,
   ...
 }:
 {
   imports = [
+    (lib.custom.relativeToRoot "users/kilisei")
+
     ../../../modules/hosts/common/core
 
-    ../../common/users/kilisei
     ../../common/core
     ../../common/optional/gaming.nix
     ../../common/optional/restic.nix

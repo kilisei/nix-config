@@ -1,10 +1,10 @@
 # Kilisei's NixOS Configuration
 
-if a human is reading this, please feel free to make pr's to help point out an issue or use this config idk why but you can :)!
-
 Hosts:
-- flocky (kilisei@flocky) is the only host I have for now.
+- flocky
 
+Home:
+- kilisei
 
 # TODOS
 - [] seperate home partition (optionl)
@@ -13,6 +13,9 @@ Hosts:
 - [] github workflows to check ? things?
 - [] auto deploy homelab on git push
 - [] polish nixvim config
+- [] impermanance setup
+  - [] disko
+
 - [] homelab 
     - [] traefik with tls
     - [] authenik or some auth provider
@@ -21,5 +24,8 @@ Hosts:
     - [] gitea actions act runner 
     - [] some dashboard for web
     - [] game servers
-    - []
+    - [] adguard/pihole
+    - [] "cloud" storage?
+    - [] 
+
 
