@@ -1,5 +1,4 @@
 {
-  networking.useDHCP = true;
   networking.firewall = rec {
     allowedTCPPortRanges = [
       # gsconnect/kdeconnect

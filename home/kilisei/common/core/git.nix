@@ -1,4 +1,4 @@
-{ pkgs,config, ... }:
+{ pkgs, config, ... }:
 {
   home.packages = with pkgs; [
     diff-so-fancy
@@ -49,7 +49,7 @@
         rebase = true;
       };
 
-      rebase =  {
+      rebase = {
         autoStash = true;
       };
       rerere.enabled = true;

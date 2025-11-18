@@ -14,9 +14,11 @@
         "x86_64-linux"
       ];
 
-      lib = nixpkgs.lib.extend (self: super: {
-        custom = import ./lib { inherit (nixpkgs) lib; }; 
-      });
+      lib = nixpkgs.lib.extend (
+        self: super: {
+          custom = import ./lib { inherit (nixpkgs) lib; };
+        }
+      );
     in
     {
       packages = forAllSystems (
@@ -48,7 +50,14 @@
       homeConfigurations = {
         "kilisei@flocky" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
-          extraSpecialArgs = { inherit inputs outputs system lib; };
+          extraSpecialArgs = {
+            inherit
+              inputs
+              outputs
+              system
+              lib
+              ;
+          };
           modules = [ ./home/kilisei/flocky.nix ];
         };
       };
@@ -83,6 +92,11 @@
 
     firefox = {
       url = "github:nix-community/flake-firefox-nightly?shallow=true";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-minecraft = {
+      url = "github:Infinidoge/nix-minecraft";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

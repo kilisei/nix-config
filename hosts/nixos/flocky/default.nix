@@ -23,11 +23,15 @@
 
     ./hardware-configuration.nix
     ./networking.nix
+    ./services/minecraft-server
     inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.sops-nix.nixosModules.sops
+    inputs.nix-minecraft.nixosModules.minecraft-servers
   ];
+
+  nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
 
   sops.secrets = {
     "user/kilisei/password/login" = {
