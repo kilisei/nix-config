@@ -6,6 +6,7 @@
     common/optional/editor
     common/optional/gnome
 
+    common/optional/sops.nix
     common/optional/kubernetes.nix
     common/optional/media.nix
     common/optional/office.nix
@@ -18,7 +19,7 @@
   ];
 
   home = rec {
-    stateVersion = "25.05";
+    stateVersion = "25.11";
     username = "kilisei";
     homeDirectory = "/home/${username}";
   };

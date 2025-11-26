@@ -1,4 +1,5 @@
 {
+  programs.wezterm.enable = true;
   programs.ghostty = {
     enable = true;
     enableZshIntegration = true;
