@@ -23,6 +23,7 @@ in
         "*/target"
         "*/node_modules"
         ".local/share/pnpm/store"
+        ".local/share/Steam/steamapps/common"
       ];
       timerConfig = {
         Persistent = true;

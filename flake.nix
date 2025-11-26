@@ -39,9 +39,7 @@
         map (host: {
           name = host;
           value = nixpkgs.lib.nixosSystem {
-            specialArgs = {
-              inherit inputs outputs lib;
-            };
+            specialArgs = { inherit inputs outputs lib; };
             modules = [ ./hosts/nixos/${host} ];
           };
         }) (builtins.attrNames (builtins.readDir ./hosts/nixos))
@@ -50,14 +48,7 @@
       homeConfigurations = {
         "kilisei@flocky" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
-          extraSpecialArgs = {
-            inherit
-              inputs
-              outputs
-              system
-              lib
-              ;
-          };
+          extraSpecialArgs = { inherit inputs outputs system; };
           modules = [ ./home/kilisei/flocky.nix ];
         };
       };

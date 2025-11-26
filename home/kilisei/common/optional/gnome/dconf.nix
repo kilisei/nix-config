@@ -18,6 +18,7 @@ rec {
     fuzzy-app-search
     awesome-tiles
     bluetooth-battery-meter
+    quick-settings-audio-panel
   ];
 
   dconf.enable = true;

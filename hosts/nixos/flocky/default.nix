@@ -2,12 +2,11 @@
   pkgs,
   inputs,
   config,
-  lib,
   ...
 }:
 {
   imports = [
-    (lib.custom.relativeToRoot "users/kilisei")
+    ../../../users/kilisei
 
     ../../../modules/hosts/common/core
 
@@ -23,12 +22,11 @@
 
     ./hardware-configuration.nix
     ./networking.nix
-    ./services/minecraft-server
+    # ./services/minecraft-server
     inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.sops-nix.nixosModules.sops
-    inputs.nix-minecraft.nixosModules.minecraft-servers
   ];
 
   nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
