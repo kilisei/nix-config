@@ -24,7 +24,7 @@ Home:
 - [] impermanance setup
   - [] disko
   - [] luks2
-- [] hostSpec idea maybe there is a better one https://github.com/EmergentMind/nix-config/blob/dev/modules/common/host-spec.nix
+- [] hostSpec and something like homeSpec ?combined? idea maybe there is a better one https://github.com/EmergentMind/nix-config/blob/dev/modules/common/host-spec.nix
 and so much more i dont know yet
 - [] ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ make ready to use nix for work ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
