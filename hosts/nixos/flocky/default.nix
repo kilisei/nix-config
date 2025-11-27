@@ -29,7 +29,6 @@
     inputs.sops-nix.nixosModules.sops
   ];
 
-  nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
 
   sops.secrets = {
     "user/kilisei/password/login" = {
