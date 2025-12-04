@@ -1,6 +1,11 @@
-{ pkgs,inputs, config, ... }:
-# let 
-#   uid = 
+{
+  pkgs,
+  inputs,
+  config,
+  ...
+}:
+# let
+#   uid =
 #     let
 #       uidScript = pkgs.writeScript "get-uid" ''
 #         #!${pkgs.runtimeShell}

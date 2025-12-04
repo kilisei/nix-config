@@ -1,7 +1,11 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    obs-studio
     vlc
+    obs-studio
+  ];
+
+  imports = [
+    ./music.nix
   ];
 }

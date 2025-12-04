@@ -29,7 +29,6 @@
     inputs.sops-nix.nixosModules.sops
   ];
 
-
   sops.secrets = {
     "user/kilisei/password/login" = {
       owner = config.users.users.kilisei.name;
@@ -70,6 +69,10 @@
 
   services.upower = {
     enable = true;
+  };
+
+  services.mpd = {
+    musicDirectory = "/home/kilisei/Music/libary";
   };
 
   system.stateVersion = "25.11";

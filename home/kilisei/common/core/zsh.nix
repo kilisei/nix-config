@@ -3,6 +3,7 @@
     enable = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    history.size = 1000000;
 
     shellAliases = {
       nix-shell = "nix-shell --command zsh";

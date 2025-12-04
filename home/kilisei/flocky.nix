@@ -8,7 +8,7 @@
 
     common/optional/sops.nix
     common/optional/kubernetes.nix
-    common/optional/media.nix
+    common/optional/media
     common/optional/office.nix
     common/optional/comms.nix
     common/optional/backups.nix
