@@ -23,6 +23,4 @@
     username = "kilisei";
     homeDirectory = "/home/${username}";
   };
-
-  xdg.userDirs.enable = true;
 }
