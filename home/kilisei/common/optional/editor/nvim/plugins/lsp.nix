@@ -22,7 +22,9 @@
         clangd.enable = true;
         gopls.enable = true;
         templ.enable = true;
-        # rust_analyzer.enable = true;
+        rust_analyzer.enable = true;
+        rust_analyzer.installRustc = true;
+        rust_analyzer.installCargo = true;
         sqls.enable = true;
         lua_ls.enable = true;
 

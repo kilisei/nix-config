@@ -24,5 +24,6 @@
   };
   home.packages = with pkgs; [
     gnome-tweaks
+    mission-center
   ];
 }

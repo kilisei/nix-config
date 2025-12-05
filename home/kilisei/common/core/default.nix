@@ -10,12 +10,13 @@
     ./zsh.nix
   ];
 
+  programs.btop.enable = true;
+
   home.packages = with pkgs; [
     man-pages
     sl
     sops
     dust
-    btop
     wrk
     fastfetch
     direnv
@@ -32,6 +33,8 @@
     nodejs_latest
     clang
     rclone
+    coreutils-full
+    nix-tree
   ];
 
   programs.home-manager.enable = true;

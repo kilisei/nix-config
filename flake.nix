@@ -55,10 +55,10 @@
     };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable?shallow=true";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11?shallow=true";
 
     home-manager = {
-      url = "github:nix-community/home-manager?shallow=true";
+      url = "github:nix-community/home-manager/release-25.11?shallow=true";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -83,11 +83,6 @@
 
     firefox = {
       url = "github:nix-community/flake-firefox-nightly?shallow=true";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nix-minecraft = {
-      url = "github:Infinidoge/nix-minecraft";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

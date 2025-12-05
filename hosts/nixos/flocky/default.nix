@@ -19,17 +19,15 @@
     ../../common/optional/yubikey.nix
     ../../common/optional/desktop
     ../../common/optional/vitualisation
+    ../../common/optional/ollama.nix
 
     ./hardware-configuration.nix
     ./networking.nix
-    # ./services/minecraft-server
     inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.sops-nix.nixosModules.sops
   ];
-
-  nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
 
   sops.secrets = {
     "user/kilisei/password/login" = {
@@ -69,9 +67,5 @@
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
   '';
 
-  services.upower = {
-    enable = true;
-  };
-
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 }
