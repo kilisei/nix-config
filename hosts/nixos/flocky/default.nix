@@ -19,10 +19,10 @@
     ../../common/optional/yubikey.nix
     ../../common/optional/desktop
     ../../common/optional/vitualisation
+    ../../common/optional/ollama.nix
 
     ./hardware-configuration.nix
     ./networking.nix
-    # ./services/minecraft-server
     inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     inputs.nixos-hardware.nixosModules.common-pc-ssd
@@ -66,14 +66,6 @@
     # Universal rule for all Vial-compatible keyboards
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
   '';
-
-  services.upower = {
-    enable = true;
-  };
-
-  services.mpd = {
-    musicDirectory = "/home/kilisei/Music/libary";
-  };
 
   system.stateVersion = "25.11";
 }

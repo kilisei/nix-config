@@ -2,10 +2,10 @@
 {
   gtk = {
     enable = true;
-    # theme = {
-    #   name = "Colloid-Dark";
-    #   package = pkgs.colloid-gtk-theme;
-    # };
+    theme = {
+      name = "Colloid-Dark";
+      package = pkgs.colloid-gtk-theme;
+    };
     iconTheme = {
       name = "Colloid-Dark";
       package = pkgs.colloid-icon-theme;
@@ -24,5 +24,6 @@
   };
   home.packages = with pkgs; [
     gnome-tweaks
+    mission-center
   ];
 }

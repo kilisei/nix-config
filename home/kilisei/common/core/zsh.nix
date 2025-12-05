@@ -8,8 +8,16 @@
     shellAliases = {
       nix-shell = "nix-shell --command zsh";
       nix-dev = "nix develop --command zsh";
+
+      cat = "bat";
       man = "batman";
+      top= "btop";
+      df = "duf";
+
+      l = "ls -lah";
       ls = "eza";
+      tree = "ls --tree";
+
       ga = "git add";
       gc = "git commit";
       gco = "git checkout";
@@ -19,8 +27,10 @@
       gr = "git reset";
       gs = "git status";
       gu = "git pull";
+
       k = "kubectl";
       v = "nvim";
+      c = "clear";
     };
 
     oh-my-zsh = {

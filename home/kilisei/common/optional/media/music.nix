@@ -15,7 +15,7 @@
           inherit src;
           hash = "sha256-w6xZQP8QTTPKQgPCX20IvoWErrgWVisEIJKkxwtQHho=";
         };
-        buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.libsecret ];
+        buildInputs = (old.buildInputs or [ ]) ++ [ prev.libsecret ];
       });
     })
   ];

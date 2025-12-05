@@ -18,6 +18,231 @@
       "vue-snippets"
       "sqlc-snippets"
     ];
+    userKeymaps = [
+      {
+        "context" = "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu";
+        "bindings" = {
+          # put key-bindings here if you want them to work in normal & visual mode
+          # Git
+          "space g h d" = "editor::ToggleSelectedDiffHunks";
+          "space g s" = "git_panel::ToggleFocus";
+
+          # Toggle inlay hints
+          "space t i" = "editor::ToggleInlayHints";
+
+          # Toggle soft wrap
+          "space u w" = "editor::ToggleSoftWrap";
+
+          # NOTE=Toggle Zen mode, not fully working yet
+          "space c z" = "workspace::ToggleCenteredLayout";
+
+          # Open markdown preview
+          "space m p" = "markdown::OpenPreview";
+          "space m P" = "markdown::OpenPreviewToTheSide";
+
+          # Open recent project
+          "space f p" = "projects::OpenRecent";
+          # Search word under cursor
+          "space s w" = "pane::DeploySearch";
+
+          # Chat with AI
+          "space a c" = "assistant::ToggleFocus";
+          # Go to file with `gf`
+          "g f" = "editor::OpenExcerpts";
+        };
+      }
+      {
+        "context" = "Editor && vim_mode == normal && !VimWaiting && !menu";
+        "bindings" = {
+          # put key-bindings here if you want them to work only in normal mode
+          # Window movement bindings
+          # Ctrl jklk to move between panes
+          "ctrl-h" = "workspace::ActivatePaneLeft";
+          "ctrl-l" = "workspace::ActivatePaneRight";
+          "ctrl-k" = "workspace::ActivatePaneUp";
+          "ctrl-j" = "workspace::ActivatePaneDown";
+
+          # +LSP
+          "space c a" = "editor::ToggleCodeActions";
+          "space ." = "editor::ToggleCodeActions";
+          "space c r" = "editor::Rename";
+          "g d" = "editor::GoToDefinition";
+          "g D" = "editor::GoToDefinitionSplit";
+          "g i" = "editor::GoToImplementation";
+          "g I" = "editor::GoToImplementationSplit";
+          "g t" = "editor::GoToTypeDefinition";
+          "g T" = "editor::GoToTypeDefinitionSplit";
+          "g r" = "editor::FindAllReferences";
+          "] d" = "editor::GoToDiagnostic";
+          "[ d" = "editor::GoToPreviousDiagnostic";
+          # TODO=Go to next/prev error
+          "] e" = "editor::GoToDiagnostic";
+          "[ e" = "editor::GoToPreviousDiagnostic";
+          # Symbol search
+          "s s" = "outline::Toggle";
+          "s S" = "project_symbols::Toggle";
+          # Diagnostic
+          "space x x" = "diagnostics::Deploy";
+
+          # +Git
+          # Git prev/next hunk
+          "] h" = "editor::GoToHunk";
+          "[ h" = "editor::GoToPreviousHunk";
+
+          # TODO=git diff is not ready yet, refer https://github.com/zed-industries/zed/issues/8665#issuecomment-2194000497
+
+          # + Buffers
+          # Switch between buffers
+          "shift-h" = "pane::ActivatePreviousItem";
+          "shift-l" = "pane::ActivateNextItem";
+          # Close active panel
+          "shift-q" = "pane::CloseActiveItem";
+          "ctrl-q" = "pane::CloseActiveItem";
+          "space b d" = "pane::CloseActiveItem";
+          # Close other items
+          "space b o" = "pane::CloseInactiveItems";
+          # Save file
+          "ctrl-s" = "workspace::Save";
+          # File finder
+          "space space" = "file_finder::Toggle";
+          # Project search
+          "space /" = "pane::DeploySearch";
+          # TODO=Open other files
+          # Show project panel with current file
+          "space e" = "pane::RevealInProjectPanel";
+        };
+      }
+      # Empty pane, set of keybindings that are available when there is no active editor
+      {
+        "context" = "EmptyPane || SharedScreen";
+        "bindings" = {
+          # Open file finder
+          "space space" = "file_finder::Toggle";
+          # Open recent project
+          "space f p" = "projects::OpenRecent";
+        };
+      }
+      # Comment code
+      {
+        "context" = "Editor && vim_mode == visual && !VimWaiting && !menu";
+        "bindings" = {
+          # visual, visual line & visual block modes
+          "g c" = "editor::ToggleComments";
+        };
+      }
+      # Better escape
+      {
+        "context" = "Editor && vim_mode == insert && !menu";
+        "bindings" = {
+          "j j" = "vim::NormalBefore"; # remap jj in insert mode to escape
+          "j k" = "vim::NormalBefore"; # remap jk in insert mode to escape
+        };
+      }
+      # Rename
+      {
+        "context" = "Editor && vim_operator == c";
+        "bindings" = {
+          "c" = "vim::CurrentLine";
+          "r" = "editor::Rename"; # zed specific
+        };
+      }
+      # Code Action
+      {
+        "context" = "Editor && vim_operator == c";
+        "bindings" = {
+          "c" = "vim::CurrentLine";
+          "a" = "editor::ToggleCodeActions"; # zed specific
+        };
+      }
+      # Toggle terminal
+      {
+        "context" = "Workspace";
+        "bindings" = {
+          "ctrl-\\" = "terminal_panel::ToggleFocus";
+        };
+      }
+      {
+        "context" = "Terminal";
+        "bindings" = {
+          "ctrl-h" = "workspace::ActivatePaneLeft";
+          "ctrl-l" = "workspace::ActivatePaneRight";
+          "ctrl-k" = "workspace::ActivatePaneUp";
+          "ctrl-j" = "workspace::ActivatePaneDown";
+        };
+      }
+      # File panel (netrw)
+      {
+        "context" = "ProjectPanel && not_editing";
+        "bindings" = {
+          "a" = "project_panel::NewFile";
+          "A" = "project_panel::NewDirectory";
+          "r" = "project_panel::Rename";
+          "d" = "project_panel::Delete";
+          "x" = "project_panel::Cut";
+          "c" = "project_panel::Copy";
+          "p" = "project_panel::Paste";
+          # Close project panel as project file panel on the right
+          "q" = "workspace::ToggleRightDock";
+          "space e" = "workspace::ToggleRightDock";
+          # Navigate between panel
+          "ctrl-h" = "workspace::ActivatePaneLeft";
+          "ctrl-l" = "workspace::ActivatePaneRight";
+          "ctrl-k" = "workspace::ActivatePaneUp";
+          "ctrl-j" = "workspace::ActivatePaneDown";
+        };
+      }
+      # Panel nagivation
+      {
+        "context" = "Dock";
+        "bindings" = {
+          "ctrl-w h" = "workspace::ActivatePaneLeft";
+          "ctrl-w l" = "workspace::ActivatePaneRight";
+          "ctrl-w k" = "workspace::ActivatePaneUp";
+          "ctrl-w j" = "workspace::ActivatePaneDown";
+        };
+      }
+      {
+        "context" = "Workspace";
+        "bindings" = {
+          # Map VSCode like keybindings
+          "cmd-b" = "workspace::ToggleRightDock";
+        };
+      }
+      # Run nearest task
+      {
+        "context" = "EmptyPane || SharedScreen || vim_mode == normal";
+        "bindings" = {
+          "space r t" = [
+            "editor::SpawnNearestTask"
+            { "reveal" = "no_focus"; }
+          ];
+        };
+      }
+      # Sneak motion, refer https://github.com/zed-industries/zed/pull/22793/files#diff-90c0cb07588e2f309c31f0bb17096728b8f4e0bad71f3152d4d81ca867321c68
+      {
+        "context" = "vim_mode == normal || vim_mode == visual";
+        "bindings" = {
+          "s" = [
+            "vim::PushSneak"
+            { }
+          ];
+          "S" = [
+            "vim::PushSneakBackward"
+            { }
+          ];
+        };
+      }
+      # Subword motion is not working really nice with `ciw`, disable for now
+      # {
+      #   "context"="VimControl && !menu";
+      #   "bindings"={
+      #     "w"="vim::NextSubwordStart";
+      #     "b"="vim::PreviousSubwordStart";
+      #     "e"="vim::NextSubwordEnd";
+      #     "g e"="vim::PreviousSubwordEnd"
+      #   }
+      # }
+    ];
     userSettings = {
       theme = "GitHub Dark Default";
       icon_theme = "Catppuccin Mocha";
@@ -26,13 +251,36 @@
 
       base_keymap = "JetBrains";
       hide_mouse = "on_typing";
+
       vim_mode = true;
+      relative_line_numbers = true;
+      indent_guides = {
+        enabled = true;
+        coloring = "indent_aware";
+      };
+
+      language_models={
+        ollama= {
+           api_url = "http://localhost:11434";
+        };
+      };
+
+  "format_on_save"= "off";
+  "agent"= {
+    "default_model"={
+      "provider"= "ollama";
+      "model"="gemma3:27b";
+    };
+    "model_parameters"= [];
+  };
+
       ui_font_family = "JetBrainsMonoNL Nerd Font Regular";
       ui_font_size = 16;
       buffer_font_family = "JetBrainsMono Nerd Font Regular";
       buffer_font_size = 16;
       terminal_font_family = "JetBrainsMono Nerd Font Regular";
       terminal_font_size = 16;
+
       buffer_font_features = {
         calt = false;
       };
@@ -40,45 +288,69 @@
         calt = false;
       };
 
-      relative_line_numbers = true;
-
-      autosave = "on_focus_change";
-      languages = {
-        # "TypeScript" = {
-        #   "formatter" = {
-        #     "external" = {
-        #       "command" = "pnpm";
-        #       "arguments" = [
-        #         "exec"
-        #         "eslint"
-        #         "--stdin-filepath"
-        #         "{buffer_path}"
-        #       ];
-        #     };
-        #   };
-        #   "code_actions_on_format" = {
-        #     "source.fixAll.eslint" = true;
-        #   };
-        #   "format_on_save" = "on";
-        # };
-        # "Vue.js" = {
-        #   "formatter" = {
-        #     "external" = {
-        #       "command" = "pnpm";
-        #       "arguments" = [
-        #         "exec"
-        #         "eslint"
-        #         "--stdin-filepath"
-        #         "{buffer_path}"
-        #       ];
-        #     };
-        #   };
-        #   "code_actions_on_format" = {
-        #     "source.fixAll.eslint" = true;
-        #   };
-        #   "format_on_save" = "on";
-        # };
+      file_types = {
+        "Dockerfile" = [
+          "Dockerfile"
+          "Dockerfile.*"
+        ];
+        "JSON" = [
+          "json"
+          "jsonc"
+          "*.code-snippets"
+        ];
       };
+
+      file_scan_exclusions = [
+        "**/.git"
+        "**/.svn"
+        "**/.hg"
+        "**/CVS"
+        "**/.DS_Store"
+        "**/Thumbs.db"
+        "**/.classpath"
+        "**/.settings"
+        # above is default from Zed
+        "**/out"
+        "**/dist"
+        "**/.husky"
+        "**/.turbo"
+        "**/.vscode-test"
+        "**/.vscode"
+        "**/.next"
+        "**/.storybook"
+        "**/.tap"
+        "**/.nyc_output"
+        "**/report"
+        "**/node_modules"
+      ];
+
+      telemetry = {
+        diagnostics = false;
+        metrics = false;
+      };
+      project_panel = {
+        button = true;
+        dock = "right";
+        git_status = true;
+      };
+      outline_panel = {
+        dock = "right";
+      };
+      collaboration_panel = {
+        dock = "left";
+      };
+      notification_panel = {
+        dock = "left";
+      };
+      chat_panel = {
+        dock = "left";
+      };
+      scrollbar = {
+         show = "never";
+       };
+       git_panel = {
+         dock = "right";
+       };
     };
   };
 }
