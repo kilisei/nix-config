@@ -2,8 +2,8 @@
   disko.devices = {
     disk = {
       primary = {
-        device = "/dev/nvme0n1"; # 2TB
         type = "disk";
+        device = "/dev/nvme0n1"; # 2TB
         content = {
           type = "gpt";
           partitions = {
@@ -20,24 +20,54 @@
             root = {
               size = "100%";
               content = {
-                type = "filesystem";
-                format = "ext4";
-                mountpoint = "/";
+                type = "btrfs";
+                extraArgs = [ "-f" ];
+                subvolumes = {
+                  "/root" = {
+                    mountpoint = "/";
+                    mountOptions = [
+                      "compress=zstd"
+                      "noatime"
+                    ];
+                  };
+                  "/nix" = {
+                    mountpoint = "/nix";
+                    mountOptions = [
+                      "compress=zstd"
+                      "noatime"
+                    ];
+                  };
+                  "/tmp" = {
+                    mountpoint = "/tmp";
+                    mountOptions = [ "noatime" ];
+                  };
+                };
               };
             };
-            nix = {
+          };
+        };
+      };
+
+      home = {
+        type = "disk";
+        device = "/dev/nvme2n1"; # 1TB
+        content = {
+          type = "gpt";
+          partitions = {
+            home = {
+              size = "100%";
               content = {
-                type = "filesystem";
-                format = "ext4";
-                mountpoint = "/nix";
-              };
-            };
-            swap = {
-              size = "8GB";
-              content = {
-                type = "swap";
-                discardPolicy = "both";
-                resumeDevice = true;
+                type = "btrfs";
+                extraArgs = [ "-f" ];
+                subvolumes = {
+                  "/home" = {
+                    mountpoint = "/home";
+                    mountOptions = [
+                      "compress=zstd"
+                      "noatime"
+                    ];
+                  };
+                };
               };
             };
           };

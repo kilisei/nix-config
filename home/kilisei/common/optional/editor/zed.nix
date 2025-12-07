@@ -259,20 +259,20 @@
         coloring = "indent_aware";
       };
 
-      language_models={
-        ollama= {
-           api_url = "http://localhost:11434";
+      language_models = {
+        ollama = {
+          api_url = "http://localhost:11434";
         };
       };
 
-  "format_on_save"= "off";
-  "agent"= {
-    "default_model"={
-      "provider"= "ollama";
-      "model"="gemma3:27b";
-    };
-    "model_parameters"= [];
-  };
+      "format_on_save" = "off";
+      "agent" = {
+        "default_model" = {
+          "provider" = "ollama";
+          "model" = "gemma3:27b";
+        };
+        "model_parameters" = [ ];
+      };
 
       ui_font_family = "JetBrainsMonoNL Nerd Font Regular";
       ui_font_size = 16;
@@ -346,11 +346,11 @@
         dock = "left";
       };
       scrollbar = {
-         show = "never";
-       };
-       git_panel = {
-         dock = "right";
-       };
+        show = "never";
+      };
+      git_panel = {
+        dock = "right";
+      };
     };
   };
 }

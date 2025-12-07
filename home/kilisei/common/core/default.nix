@@ -10,8 +10,6 @@
     ./zsh.nix
   ];
 
-  programs.btop.enable = true;
-
   home.packages = with pkgs; [
     man-pages
     sl
@@ -25,17 +23,19 @@
     jq
     cpu-x
     dig
-    tree
     imagemagick
     television
     fd
     act
     nodejs_latest
     clang
-    rclone
     coreutils-full
     nix-tree
+    duf
+    btop-rocm
   ];
+
+  programs.nh.enable = true;
 
   programs.home-manager.enable = true;
 

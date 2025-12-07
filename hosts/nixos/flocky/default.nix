@@ -11,14 +11,13 @@
     ../../../modules/hosts/common/core
 
     ../../common/core
+    ../../common/optional/desktop
+
     ../../common/optional/gaming.nix
     ../../common/optional/restic.nix
     ../../common/optional/audio.nix
-    ../../common/optional/logitech.nix
     ../../common/optional/bluetooth.nix
     ../../common/optional/yubikey.nix
-    ../../common/optional/desktop
-    ../../common/optional/vitualisation
     ../../common/optional/ollama.nix
 
     ./hardware-configuration.nix
@@ -42,10 +41,8 @@
     hostName = "flocky";
   };
 
-  programs.nix-ld.enable = true;
-
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_6_17;
     kernelParams = [
       "amdgpu.dcdebugmask=0x400" # Allegedly might help with some crashes
       "split_lock_detect=off" # Alleged gaming perf increase
@@ -54,10 +51,10 @@
       efi.canTouchEfiVariables = true;
       grub = {
         enable = true;
-        device = "nodev";
-        configurationLimit = 3;
         efiSupport = true;
         useOSProber = true;
+        device = "nodev";
+        configurationLimit = 3;
       };
     };
   };
