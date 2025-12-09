@@ -135,6 +135,21 @@
         "type": "github"
       }
     },
+    "nix-assets": {
+      "locked": {
+        "lastModified": 1765283440,
+        "narHash": "sha256-8nczraD+bnKi8hIDYx+usKm424C0yRHlfiaQRKGq+Ek=",
+        "owner": "kilisei",
+        "repo": "nix-assets",
+        "rev": "252e593feba8f857ff4608266235d4d192e8a6d2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kilisei",
+        "repo": "nix-assets",
+        "type": "github"
+      }
+    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1764440730,
@@ -209,6 +224,7 @@
         "disko": "disko",
         "firefox": "firefox",
         "home-manager": "home-manager",
+        "nix-assets": "nix-assets",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",

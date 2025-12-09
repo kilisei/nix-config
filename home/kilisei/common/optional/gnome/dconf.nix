@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }:
 with lib.hm.gvariant;
@@ -36,8 +37,8 @@ rec {
     };
 
     "org/gnome/desktop/background" = {
-      picture-uri = "file://${../../../assets/green-ascii-art.png}";
-      picture-uri-dark = "file://${../../../assets/green-ascii-art.png}";
+      picture-uri = "file://${inputs.nix-assets}/images/backgrounds/green-ascii-art.png";
+      picture-uri-dark = "file://${inputs.nix-assets}/images/backgrounds/green-ascii-art.png";
       picture-options = "zoom";
     };
     "org/gnome/desktop/interface" = {

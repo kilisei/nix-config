@@ -23,7 +23,7 @@
     ./boot.nix
     ./networking.nix
 
-    ./disko.nix
+    # ./disko.nix
     # inputs.disko.nixosModules.disko
 
     inputs.sops-nix.nixosModules.sops

@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 let
@@ -16,6 +17,7 @@ in
     isNormalUser = true;
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
+    avatar = "${inputs.nix-assets}/images/avatars/kilisei-transperent.png";
 
     hashedPasswordFile = config.sops.secrets."user/kilisei/password/login".path;
     extraGroups = ifTheyExist [
