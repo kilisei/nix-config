@@ -1,7 +1,7 @@
-{
+{pkgs,...}:{
   services.ollama = {
     enable = true;
-    acceleration = "rocm";
+    package = pkgs.ollama-rocm;
 
     loadModels = [
       "gpt-oss:20b"

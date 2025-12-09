@@ -58,6 +58,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nix-assets.url = "github:kilisei/nix-assets";
+    nix-secrets.url = "git+ssh://git@github.com/kilisei/nix-secrets"; # Needs to be this way because its private repo
 
     home-manager = {
       url = "github:nix-community/home-manager";

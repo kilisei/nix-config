@@ -1,3 +1,7 @@
 [submodule "nix-assets"]
-	path = nix-assets/
+	path = nix-assets
 	url = https://github.com/kilisei/nix-assets.git
+
+[submodule "nix-secrets"]
+	path = nix-secrets
+	url = https://github.com/kilisei/nix-secrets.git

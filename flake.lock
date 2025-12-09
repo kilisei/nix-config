@@ -150,6 +150,21 @@
         "type": "github"
       }
     },
+    "nix-secrets": {
+      "locked": {
+        "lastModified": 1765291647,
+        "narHash": "sha256-hG7Q9Evoy+Eik/EdNix6pM8q0iPq9mB5rr3yfaoIbX4=",
+        "ref": "refs/heads/main",
+        "rev": "eb82ea92b19b1dac4c78de10748349e1345a5f24",
+        "revCount": 2,
+        "type": "git",
+        "url": "ssh://git@github.com/kilisei/nix-secrets"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/kilisei/nix-secrets"
+      }
+    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1764440730,
@@ -225,6 +240,7 @@
         "firefox": "firefox",
         "home-manager": "home-manager",
         "nix-assets": "nix-assets",
+        "nix-secrets": "nix-secrets",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",

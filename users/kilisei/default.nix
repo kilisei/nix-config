@@ -6,7 +6,7 @@
   ...
 }:
 let
-  pubKeys = lib.filesystem.listFilesRecursive "../../../../secrets/keys";
+  pubKeys = lib.filesystem.listFilesRecursive "${inputs.nix-secrets}/keys";
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in
 {
@@ -17,7 +17,6 @@ in
     isNormalUser = true;
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
-    avatar = "${inputs.nix-assets}/images/avatars/kilisei-transperent.png";
 
     hashedPasswordFile = config.sops.secrets."user/kilisei/password/login".path;
     extraGroups = ifTheyExist [
