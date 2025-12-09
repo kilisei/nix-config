@@ -1,11 +1,18 @@
 { pkgs, ... }:
 {
-  hardware.xone.enable = true;
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
   };
   programs.gamemode.enable = true;
+
+  hardware = {
+    xone.enable = true;
+    logitech.wireless = {
+      enable = true;
+      enableGraphical = true;
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     protonup-ng

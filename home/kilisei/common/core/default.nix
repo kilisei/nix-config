@@ -15,7 +15,6 @@
     sl
     sops
     dust
-    btop
     wrk
     fastfetch
     direnv
@@ -24,16 +23,18 @@
     jq
     cpu-x
     dig
-    tree
     imagemagick
     television
     fd
     act
-    nodejs_latest
     clang
-    rclone
+    coreutils-full
+    nix-tree
+    duf
+    btop-rocm
   ];
 
+  programs.nh.enable = true;
   programs.home-manager.enable = true;
 
   nixpkgs.config.allowUnfree = true;

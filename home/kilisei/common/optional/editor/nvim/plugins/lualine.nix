@@ -1,3 +1,3 @@
 {
-  programs.nixvim.plugins.lualine.enable = false;
+  programs.nixvim.plugins.lualine.enable = true;
 }

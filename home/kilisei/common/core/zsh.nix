@@ -3,12 +3,19 @@
     enable = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    history.size = 1000000;
 
     shellAliases = {
-      nix-shell = "nix-shell --command zsh";
-      nix-dev = "nix develop --command zsh";
+      cat = "bat";
       man = "batman";
+      top = "btop";
+      df = "duf";
+
+      l = "ls -lah";
       ls = "eza";
+      tree = "ls --tree";
+      mdc = "(){mkdir $1; cd $1}";
+
       ga = "git add";
       gc = "git commit";
       gco = "git checkout";
@@ -18,8 +25,10 @@
       gr = "git reset";
       gs = "git status";
       gu = "git pull";
+
       k = "kubectl";
       v = "nvim";
+      c = "clear";
     };
 
     oh-my-zsh = {

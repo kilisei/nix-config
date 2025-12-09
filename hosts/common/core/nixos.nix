@@ -6,7 +6,6 @@
   ...
 }:
 {
-
   environment.systemPackages = with pkgs; [
     nixd
     nixfmt-tree
@@ -17,19 +16,23 @@
       flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
     in
     {
-      optimise = {
+      optimise.automatic = true;
+      gc = {
         automatic = true;
-        dates = [ "daily" ];
+        dates = "weekly";
+        options = "--delete-older-than 7d";
       };
 
       settings = {
+        auto-optimise-store = true;
+
         experimental-features = [
           "nix-command"
           "flakes"
         ];
-        connect-timeout = 5;
-        min-free = 128000000;
-        max-free = 1000000000;
+
+        min-free = 128 * 1024 * 1024; # 128MiB
+        max-free = 1000 * 1024 * 1024; # 1GiB
 
         keep-outputs = true;
 
@@ -39,6 +42,7 @@
           "https://cache.nixos.org" # Official global cache
           "https://nix-community.cachix.org" # Community packages
         ];
+        connect-timeout = 5;
       };
 
       channel.enable = false;
@@ -49,12 +53,5 @@
   nixpkgs.config = {
     allowUnfree = true;
     allowUnfreePredicate = (_: true);
-  };
-
-  programs.nh = {
-    enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--delete-older-than 20d";
-    flake = "/home/user/${config.hostSpec.home}/nix-config";
   };
 }

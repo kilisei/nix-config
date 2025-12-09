@@ -17,13 +17,13 @@ in
         home
       ];
       exclude = [
-        ".git"
-        "/var/cache"
-        "/home/*/.cache"
-        "*/target"
         "*/node_modules"
-        ".local/share/pnpm/store"
+        "*/target"
+        ".git"
         ".local/share/Steam/steamapps/common"
+        ".local/share/pnpm/store"
+        "/home/*/.cache"
+        "/var/cache"
       ];
       timerConfig = {
         Persistent = true;

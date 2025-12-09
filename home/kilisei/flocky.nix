@@ -6,8 +6,9 @@
     common/optional/editor
     common/optional/gnome
 
+    common/optional/sops.nix
     common/optional/kubernetes.nix
-    common/optional/media.nix
+    common/optional/media
     common/optional/office.nix
     common/optional/comms.nix
     common/optional/backups.nix
@@ -18,10 +19,8 @@
   ];
 
   home = rec {
-    stateVersion = "25.05";
+    stateVersion = "25.11";
     username = "kilisei";
     homeDirectory = "/home/${username}";
   };
-
-  xdg.userDirs.enable = true;
 }
