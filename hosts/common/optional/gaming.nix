@@ -6,7 +6,13 @@
   };
   programs.gamemode.enable = true;
 
-  hardware.xone.enable = true;
+  hardware = {
+    xone.enable = true;
+    logitech.wireless = {
+      enable = true;
+      enableGraphical = true;
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     protonup-ng

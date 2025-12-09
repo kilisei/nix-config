@@ -1,4 +1,3 @@
-{ lib, ... }:
 {
   programs.nixvim.plugins = {
     lsp-lines.enable = true;
@@ -17,22 +16,11 @@
         eslint.enable = true;
         cssls.enable = true;
         jsonls.enable = true;
-        htmx.enable = true;
 
-        clangd.enable = true;
-        gopls.enable = true;
-        templ.enable = true;
         rust_analyzer.enable = true;
         rust_analyzer.installRustc = true;
         rust_analyzer.installCargo = true;
         sqls.enable = true;
-        lua_ls.enable = true;
-
-        dockerls.enable = true;
-        # helmls.enable = true;
-        yamlls.enable = true;
-
-        harper_ls.enable = true;
       };
 
       keymaps = {

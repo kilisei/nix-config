@@ -12,6 +12,7 @@
   ];
 
   home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
   home-manager.backupFileExtension = "bk";
 
   hostSpec = {
@@ -20,6 +21,7 @@
 
   programs.git.enable = true;
   programs.zsh.enable = true;
+  programs.nix-ld.enable = true;
 
   environment.enableAllTerminfo = true;
 }

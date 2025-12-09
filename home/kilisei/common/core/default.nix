@@ -27,7 +27,6 @@
     television
     fd
     act
-    nodejs_latest
     clang
     coreutils-full
     nix-tree
@@ -36,7 +35,6 @@
   ];
 
   programs.nh.enable = true;
-
   programs.home-manager.enable = true;
 
   nixpkgs.config.allowUnfree = true;

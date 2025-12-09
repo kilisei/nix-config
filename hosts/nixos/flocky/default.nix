@@ -1,5 +1,4 @@
 {
-  pkgs,
   inputs,
   config,
   ...
@@ -21,11 +20,17 @@
     ../../common/optional/ollama.nix
 
     ./hardware-configuration.nix
+    ./boot.nix
     ./networking.nix
+
+    ./disko.nix
+    # inputs.disko.nixosModules.disko
+
+    inputs.sops-nix.nixosModules.sops
+
     inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     inputs.nixos-hardware.nixosModules.common-pc-ssd
-    inputs.sops-nix.nixosModules.sops
   ];
 
   sops.secrets = {
@@ -39,24 +44,6 @@
 
   hostSpec = {
     hostName = "flocky";
-  };
-
-  boot = {
-    kernelPackages = pkgs.linuxPackages_6_17;
-    kernelParams = [
-      "amdgpu.dcdebugmask=0x400" # Allegedly might help with some crashes
-      "split_lock_detect=off" # Alleged gaming perf increase
-    ];
-    loader = {
-      efi.canTouchEfiVariables = true;
-      grub = {
-        enable = true;
-        efiSupport = true;
-        useOSProber = true;
-        device = "nodev";
-        configurationLimit = 3;
-      };
-    };
   };
 
   services.udev.extraRules = ''

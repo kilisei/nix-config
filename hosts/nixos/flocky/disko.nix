@@ -44,6 +44,14 @@
                 };
               };
             };
+            swap = {
+              size = "4GB";
+              content = {
+                type = "swap";
+                discardPolicy = "both";
+                resumeDevice = true;
+              };
+            };
           };
         };
       };

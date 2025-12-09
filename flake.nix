@@ -55,15 +55,15 @@
     };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11?shallow=true";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11?shallow=true";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     disko = {
-      url = "github:nix-community/disko?shallow=true";
+      url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -72,17 +72,17 @@
     };
 
     nixvim = {
-      url = "github:nix-community/nixvim?shallow=true";
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     sops-nix = {
-      url = "github:mic92/sops-nix?shallow=true";
+      url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     firefox = {
-      url = "github:nix-community/flake-firefox-nightly?shallow=true";
+      url = "github:nix-community/flake-firefox-nightly";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
